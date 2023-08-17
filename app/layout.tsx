@@ -25,7 +25,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" style={{scrollBehavior:'smooth'}}>
-      <body className="max-h-screen mx-auto my-auto" >
+      <body className="max-h-screen mx-auto" >
         <Background/>
           {children}
         
