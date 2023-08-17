@@ -1,6 +1,15 @@
 import './globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
+import MyNavbar from '@/components/navbar'
+import Footer from './footer'
+import { config } from '@fortawesome/fontawesome-svg-core'
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { faFontAwesome } from '@fortawesome/free-brands-svg-icons'
+import { fas } from '@fortawesome/free-solid-svg-icons'
+import '@fortawesome/fontawesome-svg-core/styles.css'
+config.autoAddCss = false
+library.add(fas, faFontAwesome)
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -15,10 +24,11 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
+    <html lang="en" style={{scrollBehavior:'smooth'}}>
+      <body className="max-h-screen mx-auto my-auto" >
         <Background/>
-        {children}
+          {children}
+        
       </body>
     </html>
   )
@@ -26,8 +36,12 @@ export default function RootLayout({
 
 function Background(){
   return(
-    <video muted autoPlay loop className="w-full fixed top-0 left-0 z-0">         
+    <div className="absolute top-0 md:inset-x-0 md:bottom-0">
+      <MyNavbar/>
+    <video muted autoPlay loop className="relative z-0 invisible md:visible">         
     <source src="https://video.wixstatic.com/video/11062b_d013b164dadb47ec8e746ab178aacfbb/1080p/mp4/file.mp4" type="video/mp4"/>       
-</video>
+</video><Footer/>
+
+</div>
   )
 }
