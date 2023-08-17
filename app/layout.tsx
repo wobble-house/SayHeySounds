@@ -16,7 +16,19 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <BGVideo/>
+        {children}
+        
+      </body>
     </html>
+  )
+}
+
+export function BGVideo (){
+  return(
+    <video muted autoPlay loop className="w-full fixed top-0 left-0 z-0">         
+    <source src="https://video.wixstatic.com/video/11062b_d013b164dadb47ec8e746ab178aacfbb/1080p/mp4/file.mp4" type="video/mp4"/>       
+</video>
   )
 }
