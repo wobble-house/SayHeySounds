@@ -59,7 +59,7 @@ export default function MyNavbar() {
             </div>
           </div>
           <div>
-            <div ref={Navref} layout className={`flex-1 md:mx-aut0 content-center items-center bg-white md:bg-transparent dark:md:bg-transparent justify-center md:block ${navbar ? 'sticky' : 'hidden'}`}>
+            <div ref={Navref} className={`flex-1 md:mx-aut0 content-center items-center bg-white md:bg-transparent dark:md:bg-transparent justify-center md:block ${navbar ? 'sticky' : 'hidden'}`}>
               <div className={`${navbar ? 'sticky' : 'hidden'} mx-auto content-center justify-center text-center`}>
               <Link href={"/"} onClick={() => setNavbar(false)}>SayHeySounds</Link></div>
               <ul  className="text-center flex flex-col md:flex-row gap-10">
