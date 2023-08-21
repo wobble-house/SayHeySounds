@@ -2,9 +2,9 @@
 import { useRouter } from 'next/navigation';
 import Link from "next/link";
 import { getAuth, signOut } from 'firebase/auth';
-import firebase_app from '../utils/firebase/config';
+import firebase_app from '../utils/Google/firebase/config';
 import { use } from "react";
-import getDocument from "../utils/firebase/firestore/getData";
+import getDocument from "../utils/Google/firebase/firestore/getData";
 
 const auth = getAuth(firebase_app);
 

@@ -1,7 +1,7 @@
 'use client'
 import Image from "next/image";
 import React from "react";
-import signUp, { signUpGoogle } from "../../utils/firebase/auth/signup"
+import signUp, { signUpGoogle } from "../../utils/Google/firebase/auth/signup"
 import { useRouter } from 'next/navigation'
 
 export default function SignUpForm(){

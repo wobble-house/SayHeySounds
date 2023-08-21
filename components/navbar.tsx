@@ -3,7 +3,7 @@ import Link from 'next/link';
 import React, { useState, useRef, useEffect } from "react";
 import LoginButton from './login';
 import { getAuth, signOut } from 'firebase/auth';
-import firebase_app from '../utils/firebase/config';
+import firebase_app from '../utils/Google/firebase/config';
 
 const auth = getAuth(firebase_app);
 

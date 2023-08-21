@@ -4,7 +4,7 @@ import {
     onAuthStateChanged,
     getAuth,
 } from 'firebase/auth';
-import firebase_app from 'utils/firebase/config';
+import firebase_app from 'utils/Google/firebase/config';
 import Loading from '../../app/loading';
 
 const auth = getAuth(firebase_app);

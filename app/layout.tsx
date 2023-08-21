@@ -1,5 +1,6 @@
 import 'server-only'
 import './globals.css'
+import { GAScript, GABody } from '../utils/Google/analytics/google-analytics'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import MyNavbar from '@/components/navbar'
@@ -27,7 +28,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" style={{scrollBehavior:'smooth'}}>
-      <body className="max-h-screen mx-auto" >
+      <GAScript/>
+<body className="min-h-screen mx-auto">
+      <GABody/>
       <AuthContextProvider>
         <Background/>
           {children}

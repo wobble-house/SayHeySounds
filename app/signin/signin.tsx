@@ -1,9 +1,9 @@
 'use client'
 import Image from "next/image";
 import React from "react";
-import signIn from "../../utils/firebase/auth/signin";
+import signIn from "../../utils/Google/firebase/auth/signin";
 import { useRouter } from 'next/navigation'
-import { signInGoogle } from "../../utils/firebase/auth/signin";
+import { signInGoogle } from "../../utils/Google/firebase/auth/signin";
 
 export default function SignInForm(){
     const [email, setEmail] = React.useState('')
