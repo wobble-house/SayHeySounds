@@ -1,3 +1,4 @@
+import 'server-only'
 import './globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
@@ -8,6 +9,7 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { faFontAwesome } from '@fortawesome/free-brands-svg-icons'
 import { fas } from '@fortawesome/free-solid-svg-icons'
 import '@fortawesome/fontawesome-svg-core/styles.css'
+import { AuthContextProvider } from '../utils/context/AuthContext'
 config.autoAddCss = false
 library.add(fas, faFontAwesome)
 
@@ -26,9 +28,10 @@ export default function RootLayout({
   return (
     <html lang="en" style={{scrollBehavior:'smooth'}}>
       <body className="max-h-screen mx-auto" >
+      <AuthContextProvider>
         <Background/>
           {children}
-        
+          </AuthContextProvider>
       </body>
     </html>
   )

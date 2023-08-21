@@ -1,6 +1,11 @@
 'use client';
 import Link from 'next/link';
 import React, { useState, useRef, useEffect } from "react";
+import LoginButton from './login';
+import { getAuth, signOut } from 'firebase/auth';
+import firebase_app from '../utils/firebase/config';
+
+const auth = getAuth(firebase_app);
 
 export default function MyNavbar() {
   const Navref = useRef();
@@ -62,6 +67,7 @@ export default function MyNavbar() {
             <div ref={Navref} className={`flex-1 md:mx-aut0 content-center items-center bg-white md:bg-transparent dark:md:bg-transparent justify-center md:block ${navbar ? 'sticky' : 'hidden'}`}>
               <div className={`${navbar ? 'sticky' : 'hidden'} mx-auto content-center justify-center text-center`}>
               <Link href={"/"} onClick={() => setNavbar(false)}>SayHeySounds</Link></div>
+              <LoginButton/>
               <ul  className="text-center flex flex-col md:flex-row gap-10">
                 <li 
                 className="font-black text-xl">
