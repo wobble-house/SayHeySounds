@@ -8,7 +8,7 @@ import {
 
 export default function Footer(){
     return (
-        <div className={`fixed w-full flex bg-transparent mx-auto justify-center py-2 z-50 -mt-12 `}>
+        <div className={`fixed w-full bottom-0 flex bg-transparent mx-auto justify-center py-2 z-50`}>
         <div className="flex flex-row justify-center gap-4 text-black-50 mx-auto">
             <Link
                 href={'https://www.instagram.com/rossalanford/'}

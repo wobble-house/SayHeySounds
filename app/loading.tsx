@@ -1,17 +1,19 @@
+import MyNavbar from "@/components/navbar";
 import Image from "next/image";
 
 export default function Loading() {
     return (
-
-         <div className="flex flex-col justify-center items-center content-center mx-auto py-32">
+<>
+<MyNavbar/>
+         <div className="mx-auto">
+          <div className=" w-[400px] h-[400px] mx-auto pt-32">
           <Image
-          className="relative"
           src="/logos/sayheysoundslogo.webp"
           alt="SayHeySounds Logo"
           width={1330}
           height={1330}
           priority
-        />
+        /></div>
 <h2 className="animate-pulse pt-20 grow font-bold align-middle text-center leading-tight text-neutral-500 mx-auto">
   Loading
   </h2>
@@ -24,5 +26,6 @@ export default function Loading() {
     <span className="sr-only mx-auto text-center">Loading...</span>
   </div>
             </div>
+            </>
     );
 }
