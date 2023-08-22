@@ -29,14 +29,14 @@ export default function RootLayout({
   return (
     <html lang="en" style={{scrollBehavior:'smooth'}}>
       <GAScript/>
-<body className="mx-auto min-w-screen overscroll-none no-scrollbar">
+<body className="mx-auto overscroll-auto no-scrollbar">
   <GABody/>
       
-      <video muted autoPlay loop className="fixed scale-[1.6] z-0 invisible md:visible top-0 bottom-0 min-h-screen">         
+      <video muted autoPlay loop className="fixed scale-[1.6] z-0 invisible md:visible top-0 min-h-screen">         
     <source src="https://video.wixstatic.com/video/11062b_d013b164dadb47ec8e746ab178aacfbb/1080p/mp4/file.mp4" type="video/mp4"/>       
 </video>
 <AuthContextProvider>
-        <main className="relative min-h-screen overscroll-auto">
+        <main className="relative min-w-screen">
           <MyNavbar/>
           {children}
           </main>
