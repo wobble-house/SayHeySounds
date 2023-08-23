@@ -19,10 +19,8 @@ async function getArtists({status}:{status: string}){
   querySnapshot.forEach(doc => {
     let myartists = doc.data();
     myartists.id = doc.id;
-    myartists.tracks = getTracks(myartists.name)
     artists.push(myartists)
   });
-  console.log(artists)
   return artists
 };
 
