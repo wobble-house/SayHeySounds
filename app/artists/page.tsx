@@ -6,6 +6,14 @@ import Loading from '../loading'
 import firebase_app from "../../utils/Google/firebase/config";
 import { collection, getFirestore, query, where, getDocs } from "firebase/firestore";
 
+export const dynamic = 'auto'
+export const dynamicParams = true
+export const revalidate = true
+export const fetchCache = 'auto'
+export const runtime = 'nodejs'
+export const preferredRegion = 'auto'
+export const maxDuration = 5
+
 export const metadata = {
   title: 'Our Artists',
   description: 'Here is our full roster of artists.',
