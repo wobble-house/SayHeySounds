@@ -1,155 +1,56 @@
-import Image from "next/image"
-export default function Artists() {
-  return (
-    <div className="flex min-h-screen flex-col items-center mt-40">
+import "server-only"
+import { ArtistList } from "./artists"
+import { Animation } from "../../utils/animation/animation"
+import { Suspense } from 'react'
+import Loading from '../loading'
+import firebase_app from "../../utils/Google/firebase/config";
+import { collection, getFirestore, query, where, getDocs } from "firebase/firestore";
 
-    <h2 className="text-center text-3xl font-black hover:scale-105">Our Roster</h2>
-<ul className="grid grid-cols-3 gap-5 max-w-3xl overscroll-auto">
-  <li className="relative w-[100px] h-[100px] bg-white hover:scale-[1.02]">
-    <div className="absolute"><h2 className="relative text-white text-center text-xl">Artist</h2>
-    </div>
-    <Image
-    src={"/images/https___s3.amazonaws.com_l2-disco-data-us_media_businesses_9716-say-hey-sounds_artist-image_Avila.jpeg"}
-    width={100}
-    height={100}
-    alt={"artist image"}
-    />
-    
-  </li>
-  <li className="relative w-[100px] h-[100px] bg-white hover:scale-[1.02]">
-    <div className="absolute"><h2 className="relative text-white text-center text-xl">Artist</h2>
-    </div>
-    <Image
-    src={"/images/https___s3.amazonaws.com_l2-disco-data-us_media_businesses_9716-say-hey-sounds_artist-image_Avila.jpeg"}
-    width={100}
-    height={100}
-    alt={"artist image"}
-    />
-    
-  </li>
-  <li className="relative w-[100px] h-[100px] bg-white hover:scale-[1.02]">
-    <div className="absolute"><h2 className="relative text-white text-center text-xl">Artist</h2>
-    </div>
-    <Image
-    src={"/images/https___s3.amazonaws.com_l2-disco-data-us_media_businesses_9716-say-hey-sounds_artist-image_Avila.jpeg"}
-    width={100}
-    height={100}
-    alt={"artist image"}
-    />
-    
-  </li>
-  <li className="relative w-[100px] h-[100px] bg-white hover:scale-[1.02]">
-    <div className="absolute"><h2 className="relative text-white text-center text-xl">Artist</h2>
-    </div>
-    <Image
-    src={"/images/https___s3.amazonaws.com_l2-disco-data-us_media_businesses_9716-say-hey-sounds_artist-image_Avila.jpeg"}
-    width={100}
-    height={100}
-    alt={"artist image"}
-    />
-    
-  </li>
-  <li className="relative w-[100px] h-[100px] bg-white hover:scale-[1.02]">
-    <div className="absolute"><h2 className="relative text-white text-center text-xl">Artist</h2>
-    </div>
-    <Image
-    src={"/images/https___s3.amazonaws.com_l2-disco-data-us_media_businesses_9716-say-hey-sounds_artist-image_Avila.jpeg"}
-    width={100}
-    height={100}
-    alt={"artist image"}
-    />
-    
-  </li>
-  <li className="relative w-[100px] h-[100px] bg-white hover:scale-[1.02]">
-    <div className="absolute"><h2 className="relative text-white text-center text-xl">Artist</h2>
-    </div>
-    <Image
-    src={"/images/https___s3.amazonaws.com_l2-disco-data-us_media_businesses_9716-say-hey-sounds_artist-image_Avila.jpeg"}
-    width={100}
-    height={100}
-    alt={"artist image"}
-    />
-    
-  </li>
-  <li className="relative w-[100px] h-[100px] bg-white hover:scale-[1.02]">
-    <div className="absolute"><h2 className="relative text-white text-center text-xl">Artist</h2>
-    </div>
-    <Image
-    src={"/images/https___s3.amazonaws.com_l2-disco-data-us_media_businesses_9716-say-hey-sounds_artist-image_Avila.jpeg"}
-    width={100}
-    height={100}
-    alt={"artist image"}
-    />
-    
-  </li>
-  <li className="relative w-[100px] h-[100px] bg-white hover:scale-[1.02]">
-    <div className="absolute"><h2 className="relative text-white text-center text-xl">Artist</h2>
-    </div>
-    <Image
-    src={"/images/https___s3.amazonaws.com_l2-disco-data-us_media_businesses_9716-say-hey-sounds_artist-image_Avila.jpeg"}
-    width={100}
-    height={100}
-    alt={"artist image"}
-    />
-    
-  </li>
-  <li className="relative w-[100px] h-[100px] bg-white hover:scale-[1.02]">
-    <div className="absolute"><h2 className="relative text-white text-center text-xl">Artist</h2>
-    </div>
-    <Image
-    src={"/images/https___s3.amazonaws.com_l2-disco-data-us_media_businesses_9716-say-hey-sounds_artist-image_Avila.jpeg"}
-    width={100}
-    height={100}
-    alt={"artist image"}
-    />
-    
-  </li>
-  <li className="relative w-[100px] h-[100px] bg-white hover:scale-[1.02]">
-    <div className="absolute"><h2 className="relative text-white text-center text-xl">Artist</h2>
-    </div>
-    <Image
-    src={"/images/https___s3.amazonaws.com_l2-disco-data-us_media_businesses_9716-say-hey-sounds_artist-image_Avila.jpeg"}
-    width={100}
-    height={100}
-    alt={"artist image"}
-    />
-    
-  </li>
-  <li className="relative w-[100px] h-[100px] bg-white hover:scale-[1.02]">
-    <div className="absolute"><h2 className="relative text-white text-center text-xl">Artist</h2>
-    </div>
-    <Image
-    src={"/images/https___s3.amazonaws.com_l2-disco-data-us_media_businesses_9716-say-hey-sounds_artist-image_Avila.jpeg"}
-    width={100}
-    height={100}
-    alt={"artist image"}
-    />
-    
-  </li>
-  <li className="relative w-[100px] h-[100px] bg-white hover:scale-[1.02]">
-    <div className="absolute"><h2 className="relative text-white text-center text-xl">Artist</h2>
-    </div>
-    <Image
-    src={"/images/https___s3.amazonaws.com_l2-disco-data-us_media_businesses_9716-say-hey-sounds_artist-image_Avila.jpeg"}
-    width={100}
-    height={100}
-    alt={"artist image"}
-    />
-    
-  </li>
-  <li className="relative w-[100px] h-[100px] bg-white hover:scale-[1.02]">
-    <div className="absolute"><h2 className="relative text-white text-center text-xl">Artist</h2>
-    </div>
-    <Image
-    src={"/images/https___s3.amazonaws.com_l2-disco-data-us_media_businesses_9716-say-hey-sounds_artist-image_Avila.jpeg"}
-    width={100}
-    height={100}
-    alt={"artist image"}
-    />
-    
-  </li>
-
-</ul>
-    </div>
-  )
+export const metadata = {
+  title: 'Our Artists',
+  description: 'Here is our full roster of artists.',
 }
+
+async function getArtists({status}:{status: string}){
+  const artists = [];
+  const db = getFirestore(firebase_app)
+  const q = query(collection(db, "artists"), where("status", "==", status));
+  const querySnapshot = await getDocs(q)
+  querySnapshot.forEach(doc => {
+    let myartists = doc.data();
+    myartists.id = doc.id;
+    myartists.tracks = getTracks(myartists.name)
+    artists.push(myartists)
+  });
+  console.log(artists)
+  return artists
+};
+
+async function getTracks({name}:{name: string}){
+  const tracks = [];
+  const db = getFirestore(firebase_app)
+  const q = query(collection(db, "track"), where("artistName", "==", name ));
+  const querySnapshot = await getDocs(q)
+  querySnapshot.forEach(doc => {
+    let mytracks = doc.data();
+    mytracks.id = doc.id;
+    tracks.push(mytracks)
+  });
+  
+  return tracks
+};
+
+export default async function Artists() {
+  const activeArtists = await getArtists({status:"Active"})
+    return (
+      <>
+       <Animation mode={'wait'} initial={true}><Suspense fallback={<Loading/>}>
+        <div className="flex flex-col mx-auto max-w-4xl justify-center text-center py-48">
+        <ArtistList data={activeArtists}/>
+        </div>
+        </Suspense>
+        </Animation>
+        </>
+    )
+  }
+  

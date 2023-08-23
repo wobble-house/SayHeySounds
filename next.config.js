@@ -11,6 +11,9 @@ module.exports = {
       RESUME: process.env.RESUME,
     },
     images: {
+      domains: [
+        'firebasestorage.googleapis.com',
+      ],
       dangerouslyAllowSVG: true,
       contentSecurityPolicy: "default-src 'self'; sandbox;",
       minimumCacheTTL: 60,
@@ -18,6 +21,7 @@ module.exports = {
     experimental: {
       appDir: true,
       typedRoutes: true,
+      serverActions: true,
     },
     typescript: {
       // !! WARN !!
