@@ -51,7 +51,7 @@ export default async function Artists() {
     return (
       <>
        <Animation mode={'wait'} initial={true}><Suspense fallback={<Loading/>}>
-        <div className="flex flex-col mx-auto max-w-4xl justify-center text-center py-48">
+        <div className="flex flex-col mx-auto max-w-4xl justify-center text-center">
         <ArtistList data={activeArtists}/>
         </div>
         </Suspense>

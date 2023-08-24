@@ -4,7 +4,7 @@ import { Animation } from '../utils/animation/animation'
 import { GAScript, GABody} from '../utils/Google/analytics/google-analytics'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
-import MyNavbar from '@/components/navbar'
+import Nav from '@/components/nav'
 import Footer from './footer'
 import { config } from '@fortawesome/fontawesome-svg-core'
 import { library } from '@fortawesome/fontawesome-svg-core'
@@ -30,20 +30,16 @@ export default function RootLayout({
   return (
     <html lang="en" style={{scrollBehavior:'smooth'}}>
       <GAScript/>
-<body className="mx-auto overscroll-auto no-scrollbar">
-  <GABody/>
-      
-      <video muted autoPlay loop className="fixed scale-[1.6] z-0 invisible md:visible top-0 min-h-screen">         
-    <source src="https://video.wixstatic.com/video/11062b_d013b164dadb47ec8e746ab178aacfbb/1080p/mp4/file.mp4" type="video/mp4"/>       
-</video>
-<AuthContextProvider>
-<Animation mode={'wait'} initial={false}>
-        <main className="relative min-w-screen">
-          <MyNavbar/>
-          {children}
-          </main>
-          </Animation>
-          </AuthContextProvider>
+        <body className="mx-auto overscroll-auto no-scrollbar">
+          <GABody/>
+            <AuthContextProvider>
+              <Animation mode={'wait'} initial={false}>
+                <Nav/>
+                <main className="relative min-w-screen mx-auto">
+                    {children}
+                </main>
+              </Animation>
+            </AuthContextProvider>
           <Footer/>
       </body>
     </html>

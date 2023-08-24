@@ -7,7 +7,7 @@ import firebase_app from '../utils/Google/firebase/config';
 
 const auth = getAuth(firebase_app);
 
-export default function MyNavbar() {
+export default function Nav() {
   const Navref = useRef();
   const [navbar, setNavbar] = useState(false);
   const handleClickOutside = () => {
@@ -18,7 +18,7 @@ export default function MyNavbar() {
   }
   useOnClickOutside(Navref, handleClickOutside)
   return (
-      <nav className="w-full top-0 fixed z-50 md:px-5 pt-16">
+      <nav className="max-w-4xl z-50 md:px-5 pt-16 mx-auto">
         <div className="flex flex-col md:flex-row justify-center mx-auto">
           <div className="flex flex-row">
             <div className="flex flex-row-reverse items-center justify-between md:block">
@@ -71,40 +71,32 @@ export default function MyNavbar() {
               <ul  className="text-center flex flex-col md:flex-row gap-10">
                 <li 
                 className="font-black text-xl">
-                  <Link href="/" onClick={() => setNavbar(false)} prefetch={false}>
+                  <Link href="/" onClick={() => setNavbar(false)}>
                   Home
                   </Link>
                 </li>
                 <li 
                 className="font-black text-xl">
-                  <Link href="/about" onClick={() => setNavbar(false)} prefetch={false}>
+                  <Link href="/about" onClick={() => setNavbar(false)}>
                   About
                   </Link>
                 </li>
                 <li 
                 className="font-black text-xl">
-                  <Link href="/artists" onClick={() => setNavbar(false)} prefetch={false}>
+                  <Link href="/artists" onClick={() => setNavbar(false)}>
                   Our Roster
                   </Link>
-                </li>                <li 
+                </li>
+                <li 
                 className="font-black text-xl">
-                  <Link href="/catalog" onClick={() => setNavbar(false)} prefetch={false}>
-                  Catalog
-                  </Link>
-                </li>                <li 
-                className="font-black text-xl">
-                  <Link href="/sync" onClick={() => setNavbar(false)} prefetch={false}>
+                  <Link href="/sync" onClick={() => setNavbar(false)}>
                   Sync Placements
                   </Link>
-                </li>                <li 
+                </li>
+                <li 
                 className="font-black text-xl">
-                  <Link href="/submissions" onClick={() => setNavbar(false)} prefetch={false}>
+                  <Link href="/submissions" onClick={() => setNavbar(false)}>
                   Artist Submissions
-                  </Link>
-                </li>                <li 
-                className="font-black text-xl">
-                  <Link href="/contact" onClick={() => setNavbar(false)} prefetch={false}>
-                  Contact
                   </Link>
                 </li>
               </ul>
