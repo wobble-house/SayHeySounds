@@ -77,12 +77,12 @@ export default function Details({
         },
       };
       return (
-        <div className="flex flex-col relative px-4 max-w-sm md:max-w-2xl lg:max-w-6xl overscroll-contain">
+        <div className="flex flex-col relative px-4 max-w-sm md:max-w-2xl lg:max-w-6xl overscroll-contain bg-black">
             <motion.div 
                 layout
                 initial="hidden"
                 animate="visible"
-                variants={item} className=" bg-rosspurple dark:bg-rossdarkpurple mr-auto -ml-4 -mb-2 relative z-30">
+                variants={item} className="relative z-30">
                 <h2 className=" relative text-white  text-left px-5 md:text-4xl">{name}</h2>
               </motion.div>
             <motion.div layout
@@ -102,16 +102,16 @@ export default function Details({
                        
                         </div>
                       </div>
-                      <div className="bg-rosspurple dark:bg-rossdarkpurple h-1 w-full"></div>
+                      <div className="h-1 w-full"></div>
               <div className="mx-auto overflow-auto">
-              <ReactMarkdown className="paragraph line-break list-inside text-left text-black dark:text-white max-w-2xl" remarkPlugins={[remarkGfm, remarkBreaks]}>
+              <ReactMarkdown className="paragraph line-break list-inside text-left max-w-2xl text-white" remarkPlugins={[remarkGfm, remarkBreaks]}>
                 {bio}
                 </ReactMarkdown>
               </div>
               <div className="flex flex-row gap-10 mx-auto">
-              <button className={` p-2 drop-shadow hover:scale-[1.01] bg-rosspurple dark:bg-rossdarkpurple`}>
+              <button className={` p-2 drop-shadow hover:scale-[1.01] text-white`}>
                 <Link href={link} target="_blank" 
-                rel="noopener noreferrer" className="text-white dark:text-white">Visit the Site</Link>
+                rel="noopener noreferrer" className="">Visit the Site</Link>
                 </button> 
               </div></div>
             </motion.div>

@@ -10,7 +10,7 @@ export function ArtistList({data}){
       opacity: 1,
       transition: {
         when: "beforeChildren",
-        staggerChildren: 0.3,
+        staggerChildren: 0.2,
       },
     },
     hidden: { 
@@ -29,7 +29,7 @@ export function ArtistList({data}){
                 whileInView="visible"
                 variants={Artistlist}
                 viewport={{ once: false }}
-                className="flex flex-wrap gap-5 mx-auto text-center place-content-center z-30 relative">
+                className="flex flex-wrap gap-2 mx-auto text-center place-content-center z-30 relative">
                  {data.map(docs => (
                     <ArtistCard 
                     key={docs.id} 
@@ -78,20 +78,20 @@ export function ArtistCard({
           opacity: 0,
           scale: 0,
           transition: {
-            duration: 3,
+            duration: 2,
             type: "spring",
             damping: 40,
-            stiffness: 300,
+            stiffness: 250,
           },
       },
       visible: {
           opacity: 1,
           scale: 1,
           transition: {
-              duration: 2,
+              duration: 1.5,
               type: "spring",
               damping: 40,
-              stiffness: 300,
+              stiffness: 250,
           }
       },
       exit: {
@@ -106,7 +106,6 @@ export function ArtistCard({
       y: 0,
       transition: {
         when: "beforeChildren",
-        staggerChildren: 0.4,
       },
     },
     hidden: { 
@@ -115,7 +114,6 @@ export function ArtistCard({
       y:-100,
       transition: {
         when: "afterChildren",
-        staggerChildren: 0.4,
       },
     },
     exit: {
@@ -148,9 +146,9 @@ export function ArtistCard({
     key={name} 
     variants={item}
     id="" 
-    className="fixed top-0 left-0 w-full h-full grow max-h-screen z-50 mx-auto place-content-center pt-20 overflow-hidden overscroll-none"
+    className="fixed top-0 left-0 w-full h-full grow max-h-screen z-50 mx-auto place-content-center overflow-hidden overscroll-none bg-black bg-opacity-75"
     >
-      <div className="flex artist-card justify-center items-center mx-auto my-auto overscroll-none bg-black">
+      <div className="flex artist-card justify-center items-center mx-auto overscroll-none mt-20">
                   <motion.div
                   layout
                   className="grid grid-cols-0"
@@ -192,14 +190,15 @@ else return (
                 whileHover={{scale: 1.05}}
                 className="save-button"
                 onClick={!isModalOpen ? open : close }>
-                    <div className="flex content-center justify-center w-full h-full relative shadow-3xl">
-                    <div className="flex-col items-center content-center justify-center w-full h-full relative -ml-4 -mt-2 p-5 mb-2">
-                          <div className="flex shrink bg-rosspurple dark:bg-rossdarkpurple  text-white px-2">
-                        <h2 className="text-xl uppercase font-bold text-left">{name}</h2>
+                    <div className="flex content-center justify-center relative shadow-3xl ">
+                    <div className="items-center content-center justify-center w-full h-full">
+                <div className="fixed px-2 z-30">
+                        <h2 className="text-xl uppercase font-bold text-left text-white">{name}</h2>
                   </div>
-                <div className="flex bg-zinc-50 m-2 relative mt-3 w-48 h-32 mr-5">
+                <div className="flex bg-zinc-50 relative w-48 h-32">
                   <ImageHandler src={backgroundImage.src} alt={backgroundImage.alt} fallbackSrc={'/images/oof.png'} height={768} width={1024} />
                 </div>
+
                 </div>
                 </div>
               </motion.button>

@@ -14,7 +14,7 @@ export default function Page() {
         <>
 <Suspense fallback={<Loading/>}>
     <div className="flex">
-        <div className="mx-auto py-20 relative">
+        <div className="mx-auto relative">
             <SignInForm/>
             <h2 className="text-center">or</h2>
             <GoogleSigninButton/>

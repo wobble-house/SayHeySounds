@@ -23,14 +23,13 @@ export default function LoginButton() {
       return (
               <>
               <div className="fixed top-5 right-5 md:left-auto flex flex-col-reverse justify-end content-end items-end z-50">
-              <div className="flex flex-row items-center">
-      <p className="text-black dark:text-white font-bold pl-1"><Link href="/signup">Sign Up</Link> or </p>
-      <div className="flex ml-3 pt-2 hover:scale-105">
-              <div className="  pr-1 pb-1 mt-1 pt-1">
-              <div className="  pr-1 pb-1 -ml-1 -mt-1">
-                <button className=" text-white   px-4 py-1 -ml-1 -mt-1" onClick={handleSignIn}>Sign in</button>
-                </div>
-                </div>
+              <div className="flex flex-row items-center gap-2">
+              <div className="flex hover:scale-105">
+      <Link href="/signup">Sign Up</Link> 
+      </div>
+      <p className="font-bold">or </p>
+      <div className="flex hover:scale-105">
+                <button className="" onClick={handleSignIn}>Sign in</button>
                 </div>
                 </div>
                 </div>
@@ -43,15 +42,11 @@ export default function LoginButton() {
         <div className="flex flex-row items-center">
 <Link href={'/admin'}>
 <div className="flex flex-row items-center">
-        <p className="text-black dark:text-white font-bold pl-1">Hi, </p><AuthCheck/><p> ! </p>
+        <p className="font-bold pl-1">Hi, </p><AuthCheck/><p> ! </p>
         </div>
 </Link>
       <div className="flex ml-3 pt-2 hover:scale-105">
-  <div className="  pr-1 pb-1 mt-1 pt-1">
-  <div className="  pr-1 pb-1 -ml-1 -mt-1">
-    <button className=" text-white   px-4 py-1 -ml-1 -mt-1" onClick={handleSignOut}>Sign out</button>
-    </div>
-    </div>        
+    <button className=" " onClick={handleSignOut}>Sign out</button>  
     </div>
     </div>
     </div>

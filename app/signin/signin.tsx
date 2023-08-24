@@ -46,15 +46,15 @@ export default function SignInForm(){
 
     return(
     <section>
-      <div className=" mb-20">
-        <h2 className="px-5 mr-auto md:text-4xl">
+
+        <h2 className="px-5 py-10 md:text-4xl">
             Sign In
             </h2>
-        </div>
+
 
 
             <form onSubmit={handleSigninForm} className="">
-            <div className="flex flex-col pr-2 mb-12 shadow-2xl">
+            <div className="flex flex-col pr-2 shadow-2xl">
                 <label 
                 htmlFor="email" 
                 className="text-xl px-2 mr-auto relative">

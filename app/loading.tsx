@@ -1,19 +1,20 @@
-import MyNavbar from "@/components/nav";
+import Nav from "@/components/nav";
 import Image from "next/image";
 
 export default function Loading() {
     return (
 <>
-         <div className="relative flex-col mx-auto justify-content-center max-w-md">
-          <div className=" w-[400px] h-[400px] mx-auto pt-32">
-            <Image
-            src="/logos/sayheysoundslogo.webp"
-            alt="SayHeySounds Logo"
-            width={1330}
-            height={1330}
-            priority
-            />
-          </div>
+<main className="relative min-w-screen mx-auto mt-10">
+         <div className="flex items-center w-96 mx-auto">
+        <Image
+          className="relative"
+          src="/logos/sayheysoundslogo.webp"
+          alt="SayHeySounds Logo"
+          width={1330}
+          height={1330}
+          priority
+        />
+      </div>
         <h2 className="animate-pulse pt-20 grow font-bold align-middle text-center leading-tight text-neutral-500 mx-auto text-xl">
           Loading...
         </h2>
@@ -27,7 +28,7 @@ export default function Loading() {
           <span className="sr-only mx-auto text-center">Loading...</span>
           </div>
         </div>
-      </div>
+      </main>
     </>
     );
 }

@@ -14,7 +14,7 @@ export default function Page() {
         <>
 <Suspense fallback={<Loading/>}>
     <div className="flex">
-        <div className="mx-auto py-20 relative">
+        <div className="mx-auto relative">
             <p className="py-5 text-black dark:text-white max-w-xs">
                 Sign up to learn more about us!
                 </p>

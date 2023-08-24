@@ -30,12 +30,12 @@ export default function RootLayout({
   return (
     <html lang="en" style={{scrollBehavior:'smooth'}}>
       <GAScript/>
-        <body className="mx-auto overscroll-auto no-scrollbar">
+        <body className="relative mx-auto overscroll-auto no-scrollbar">
           <GABody/>
             <AuthContextProvider>
               <Animation mode={'wait'} initial={false}>
                 <Nav/>
-                <main className="relative min-w-screen mx-auto">
+                <main className="relative min-w-screen mx-auto pt-24">
                     {children}
                 </main>
               </Animation>

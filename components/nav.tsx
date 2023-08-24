@@ -18,7 +18,7 @@ export default function Nav() {
   }
   useOnClickOutside(Navref, handleClickOutside)
   return (
-      <nav className="max-w-4xl z-50 md:px-5 pt-16 mx-auto">
+      <nav className="fixed w-full z-50 md:px-5 pt-16 mx-auto">
         <div className="flex flex-col md:flex-row justify-center mx-auto">
           <div className="flex flex-row">
             <div className="flex flex-row-reverse items-center justify-between md:block">
