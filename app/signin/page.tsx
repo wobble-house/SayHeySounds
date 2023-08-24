@@ -1,8 +1,6 @@
 import 'server-only'
 import React from "react";
 import SignInForm, { GoogleSigninButton } from "./signin";
-import { Suspense } from 'react'
-import Loading from '../loading'
 
 export const metadata = {
     title: 'Sign-In',
@@ -12,7 +10,6 @@ export const metadata = {
 export default function Page() {
     return (
         <>
-<Suspense fallback={<Loading/>}>
     <div className="flex">
         <div className="mx-auto relative">
             <SignInForm/>
@@ -20,7 +17,6 @@ export default function Page() {
             <GoogleSigninButton/>
         </div>
     </div>
-    </Suspense>
     </>
     );
 }

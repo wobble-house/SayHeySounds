@@ -1,10 +1,9 @@
-import Nav from "@/components/nav";
 import Image from "next/image";
 
 export default function Loading() {
     return (
 <>
-<main className="relative min-w-screen mx-auto mt-10">
+<div className="relative min-w-screen mx-auto mt-10">
          <div className="flex items-center w-96 mx-auto">
         <Image
           className="relative"
@@ -28,7 +27,7 @@ export default function Loading() {
           <span className="sr-only mx-auto text-center">Loading...</span>
           </div>
         </div>
-      </main>
+      </div>
     </>
     );
 }

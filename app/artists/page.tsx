@@ -1,8 +1,6 @@
 import "server-only"
 import { ArtistList } from "./artists"
 import { Animation } from "../../utils/animation/animation"
-import { Suspense } from 'react'
-import Loading from '../loading'
 import firebase_app from "../../utils/Google/firebase/config";
 import { collection, getFirestore, query, where, getDocs } from "firebase/firestore";
 
@@ -50,11 +48,10 @@ export default async function Artists() {
   const activeArtists = await getArtists({status:"Active"})
     return (
       <>
-       <Animation mode={'wait'} initial={true}><Suspense fallback={<Loading/>}>
+       <Animation mode={'wait'} initial={true}>
         <div className="flex flex-col mx-auto max-w-4xl justify-center text-center">
         <ArtistList data={activeArtists}/>
         </div>
-        </Suspense>
         </Animation>
         </>
     )
