@@ -32,14 +32,16 @@ export default function RootLayout({
       <GAScript/>
         <body className="relative mx-auto overscroll-auto no-scrollbar">
           <GABody/>
+          <Animation mode={'wait'} initial={false}>
             <AuthContextProvider>
-              <Animation mode={'wait'} initial={false}>
+              
                 <Nav/>
                 <main className="relative min-w-screen mx-auto pt-24">
                     {children}
                 </main>
-              </Animation>
+              
             </AuthContextProvider>
+            </Animation>
           <Footer/>
       </body>
     </html>

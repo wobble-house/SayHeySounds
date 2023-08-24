@@ -79,6 +79,7 @@ export default function Details({
       return (
         <div className="flex flex-col relative px-4 max-w-sm md:max-w-2xl lg:max-w-6xl overscroll-contain bg-black">
             <motion.div 
+                key={`${name}name`}
                 layout
                 initial="hidden"
                 animate="visible"
