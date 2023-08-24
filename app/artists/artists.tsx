@@ -196,7 +196,7 @@ else return (
                         <h2 className="text-xl uppercase font-bold text-left text-white">{name}</h2>
                   </div>
                 <div className="flex bg-zinc-50 relative w-48 h-32">
-                  <ImageHandler src={backgroundImage.src} alt={backgroundImage.alt} fallbackSrc={'/images/oof.png'} height={768} width={1024} />
+                  <ImageHandler src={backgroundImage.src} alt={backgroundImage.alt} fallbackSrc={'/images/oof.png'} height={768} width={1024} priority />
                 </div>
 
                 </div>
