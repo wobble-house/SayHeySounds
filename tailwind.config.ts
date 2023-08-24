@@ -6,7 +6,14 @@ const config: Config = {
     './components/**/*.{js,ts,jsx,tsx,mdx}',
     './app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
+  darkMode: 'class', // or 'class'
   theme: {
+    extend: {
+      boxShadow: {
+        '3xl': '0 35px 60px -15px rgba(0, 0, 0, 0.3)',
+        '4xl': '0 45px 70px -10px rgba(0, 0, 0, 0.5)',
+      }
+    },
     colors: ({ colors }) => ({
       inherit: colors.inherit,
       current: colors.current,
@@ -124,8 +131,6 @@ const config: Config = {
       lg: '1024px',
       xl: '1280px',
       '2xl': '1536px',
-    },
-    extend: {
     },
   },
   plugins: [],

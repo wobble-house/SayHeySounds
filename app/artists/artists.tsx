@@ -146,7 +146,7 @@ export function ArtistCard({
     key={name} 
     variants={item}
     id="" 
-    className="fixed top-0 left-0 w-full h-full grow max-h-screen z-50 mx-auto place-content-center overflow-hidden overscroll-none bg-black bg-opacity-75"
+    className="fixed top-0 left-0 w-full h-full grow max-h-screen z-50 mx-auto place-content-center overflow-hidden overscroll-none bg-black"
     >
       <div className="flex artist-card justify-center items-center mx-auto overscroll-none mt-20">
                   <motion.div

@@ -31,7 +31,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" style={{scrollBehavior:'smooth'}}>
-        <body className="relative mx-auto overscroll-auto no-scrollbar">
+        <body className="relative mx-auto overscroll-auto no-scrollbar text-black dark:text-white">
           <GABody/>
           <Animation mode={'wait'} initial={'false'}>
             <AuthContextProvider>
