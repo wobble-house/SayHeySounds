@@ -1,7 +1,7 @@
 import 'server-only'
 import './globals.css'
 import { Animation } from '../utils/animation/animation'
-import { GAScript, GABody} from '../utils/Google/analytics/google-analytics'
+import {GABody} from '../utils/Google/analytics/google-analytics'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import Nav from '@/components/nav'
@@ -29,7 +29,6 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" style={{scrollBehavior:'smooth'}}>
-      <GAScript/>
         <body className="relative mx-auto overscroll-auto no-scrollbar">
           <GABody/>
           <Animation mode={'wait'} initial={'false'}>

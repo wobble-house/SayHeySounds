@@ -71,31 +71,31 @@ export default function Nav() {
               <ul  className="text-center flex flex-col md:flex-row gap-10">
                 <li 
                 className="font-black text-xl">
-                  <Link href="/" onClick={() => setNavbar(false)}>
+                  <Link href="/" onClick={() => setNavbar(false)} prefetch={false}>
                   Home
                   </Link>
                 </li>
                 <li 
                 className="font-black text-xl">
-                  <Link href="/about" onClick={() => setNavbar(false)}>
+                  <Link href="/about" onClick={() => setNavbar(false)} prefetch={false}>
                   About
                   </Link>
                 </li>
                 <li 
                 className="font-black text-xl">
-                  <Link href="/artists" onClick={() => setNavbar(false)}>
+                  <Link href="/artists" onClick={() => setNavbar(false)} prefetch={false}>
                   Our Roster
                   </Link>
                 </li>
                 <li 
                 className="font-black text-xl">
-                  <Link href="/sync" onClick={() => setNavbar(false)}>
+                  <Link href="/sync" onClick={() => setNavbar(false)} prefetch={false}>
                   Sync Placements
                   </Link>
                 </li>
                 <li 
                 className="font-black text-xl">
-                  <Link href="/submissions" onClick={() => setNavbar(false)}>
+                  <Link href="/submissions" onClick={() => setNavbar(false)} prefetch={false}>
                   Artist Submissions
                   </Link>
                 </li>

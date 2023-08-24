@@ -49,7 +49,7 @@ export default async function Artists() {
     return (
       <>
        <Animation mode={'wait'} initial={true}>
-        <div className="flex flex-col mx-auto max-w-4xl justify-center text-center">
+        <div className="flex flex-col mx-auto max-w-4xl justify-center text-center mt-10">
         <ArtistList data={activeArtists}/>
         </div>
         </Animation>
