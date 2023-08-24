@@ -1,5 +1,8 @@
-
-export default function About() {
+export const metadata = {
+  title: 'Contact Us',
+  description: 'Sign Up to learn more about SayHeySounds',
+}
+export default function ContactUs() {
   return (
     <>
     <div className="relative flex min-h-screen flex-col items-center justify-between mt-10">

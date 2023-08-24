@@ -1,5 +1,9 @@
+export const metadata = {
+  title: 'Sync Licensing',
+  description: 'Sign Up to learn more about SayHeySounds',
+}
 
-export default function About() {
+export default function Sync() {
   return (
     <div className="relative flex min-h-screen flex-col items-center justify-between mt-10">
 

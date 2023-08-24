@@ -1,5 +1,10 @@
 import Image from 'next/image'
 
+export const metadata = {
+  title: 'Home',
+  description: 'Sign Up to learn more about SayHeySounds',
+}
+
 export default function Home() {
   return (
     <div className="flex min-h-screen flex-col items-center mx-auto mt-10">

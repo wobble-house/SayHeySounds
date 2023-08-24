@@ -1,5 +1,4 @@
 import 'server-only'
-import React from "react";
 import SignInForm, { GoogleSigninButton } from "./signin";
 
 export const metadata = {
