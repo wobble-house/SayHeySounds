@@ -21,7 +21,6 @@ module.exports = {
     experimental: {
       appDir: true,
       typedRoutes: true,
-      serverActions: true,
     },
     typescript: {
       // !! WARN !!

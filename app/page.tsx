@@ -4,6 +4,8 @@ import Image from 'next/image'
 import { Animation } from '@/utils/animation/animation'
 import Nav from '@/components/nav'
 import LoginButton from '@/components/login'
+import { Suspense } from "react"
+import Loading from "./loading"
 
 export const metadata = {
   title: 'Home',
@@ -13,8 +15,10 @@ export const metadata = {
 export default function Home() {
   return (
     <>
+    
     <Nav><LoginButton/></Nav>
     <Animation mode={'wait'} initial>
+      <Suspense fallback={<Loading/>}>
    <Header>
     <div className="flex flex-col items-center mx-auto pb-12 mt-20">
       <div className="flex place-items-center w-96">
@@ -29,7 +33,9 @@ export default function Home() {
       </div>
     </div>
     </Header>
+    </Suspense>
     </Animation>
+    
     </>
   )
 }

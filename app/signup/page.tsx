@@ -3,6 +3,8 @@ import SignUpForm, { GoogleSignupButton } from "./signup";
 import { Animation } from "@/utils/animation/animation";
 import Nav from "@/components/nav";
 import LoginButton from "@/components/login";
+import { Suspense } from "react";
+import Loading from "../loading";
 
 export const metadata = {
     title: 'Sign-Up',
@@ -14,6 +16,7 @@ export default function Signup() {
         <>
         <Nav><LoginButton/></Nav>
 <Animation mode={'wait'} initial={'false'}>
+<Suspense fallback={<Loading/>}>
     <div className="flex mt-20">
         <div className="mx-auto relative">
             <p className="py-5 text-black dark:text-white max-w-xs">
@@ -24,6 +27,7 @@ export default function Signup() {
             <GoogleSignupButton/>
         </div>
     </div>
+    </Suspense>
 </Animation>
 </>
     );

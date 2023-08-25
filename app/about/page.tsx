@@ -3,6 +3,8 @@ import { Header } from "@/components/section"
 import { Animation } from "@/utils/animation/animation"
 import Nav from "@/components/nav"
 import LoginButton from "@/components/login"
+import { Suspense } from "react"
+import Loading from "../loading"
 
 export const metadata = {
   title: 'About Us',
@@ -13,7 +15,7 @@ export default function AboutUs() {
   <>
   <Nav><LoginButton/></Nav>
     <Animation mode={'wait'} initial={'false'}>
-      
+    <Suspense fallback={<Loading/>}>
     <Header>
     <div className="relative flex min-h-screen flex-col items-center justify-between mt-20">
 
@@ -27,6 +29,7 @@ prominent hubs in NY, LA, and MI. Our forte lies in One Stop sync licensing,
 
     </div>
     </Header>
+    </Suspense>
     </Animation>
     </>
   )

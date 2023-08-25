@@ -5,6 +5,16 @@ import Section, { Header } from '@/components/section';
 import Nav from '@/components/nav';
 import LoginButton from '@/components/login';
 import Admin from "./admin-display";
+import { Suspense } from 'react';
+import Loading from '../loading';
+
+export const dynamic = 'auto'
+export const dynamicParams = true
+export const revalidate = true
+export const fetchCache = 'auto'
+export const runtime = 'nodejs'
+export const preferredRegion = 'auto'
+export const maxDuration = 5
 
 export const metadata = {
     title: 'Dashboard',
@@ -18,15 +28,16 @@ export default async function Dashboard() {
         <>
         <Nav><LoginButton/></Nav>
 <Animation mode={'wait'} initial={'false'}>
+<Suspense fallback={<Loading/>}>
     <div className="relative flex min-h-screen flex-col items-center justify-between mt-20">
     <Header>
 <h2 className="text-center text-3xl font-black hover:scale-105">Dashboard</h2>
 </Header>
 <Section>
     <Admin />
-
 </Section>
     </div>
+    </Suspense>
 </Animation>
 </>
     )

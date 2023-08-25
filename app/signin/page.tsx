@@ -3,6 +3,8 @@ import SignInForm, { GoogleSigninButton } from "./signin";
 import { Animation } from '@/utils/animation/animation';
 import Nav from '@/components/nav';
 import LoginButton from '@/components/login';
+import { Suspense } from 'react';
+import Loading from '../loading';
 
 export const metadata = {
     title: 'Sign-In',
@@ -14,6 +16,7 @@ export default function Signin() {
         <>
         <Nav><LoginButton/></Nav>
 <Animation mode={'wait'} initial={'false'}>
+<Suspense fallback={<Loading/>}>
     <div className="flex mt-20">
         <div className="mx-auto relative">
             <SignInForm/>
@@ -21,6 +24,7 @@ export default function Signin() {
             <GoogleSigninButton/>
         </div>
     </div>
+    </Suspense>
 </Animation>
 </>
     );

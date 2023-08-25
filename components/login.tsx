@@ -12,7 +12,7 @@ export default function LoginButton() {
   const router = useRouter();
     const handleSignOut = () => {
       signOut(auth);
-      router.refresh();
+      router.push("/");
     }
     const handleSignIn = () => {
       router.push(
@@ -22,8 +22,8 @@ export default function LoginButton() {
     if (auth.currentUser === null) {
       return (
               <>
-              <div className="fixed top-5 right-5 md:left-auto flex flex-col-reverse justify-end content-end items-end">
-              <div className="flex flex-row items-center gap-2">
+              <div className="fixed top-2 right-5 md:left-auto flex flex-col-reverse justify-end content-end items-end">
+              <div className="flex flex-row items-center gap-2 text-sm">
               <div className="flex hover:scale-105">
       <Link href="/signup">Sign Up</Link> 
       </div>

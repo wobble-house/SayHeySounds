@@ -56,33 +56,33 @@ export default function Nav({children}) {
             </div>
           </div>
             <div ref={Navref} className={`flex h-full z-20 md:mx-auto content-center items-center bg-white dark:bg-black md:bg-transparent dark:md:bg-transparent justify-center md:block ${navbar ? 'sticky' : 'hidden'}`}>
-              <ul  className="text-center flex flex-col md:flex-row gap-10">
+              <ul  className="text-center flex flex-col md:flex-row gap-5">
                 <li 
-                className="font-black text-xl">
+                className="font-bold text-lg">
                   <Link href="/" onClick={() => setNavbar(false)} prefetch={false}>
                   Home
                   </Link>
                 </li>
                 <li 
-                className="font-black text-xl">
+                className="font-bold text-lg">
                   <Link href="/about" onClick={() => setNavbar(false)} prefetch={false}>
                   About
                   </Link>
                 </li>
                 <li 
-                className="font-black text-xl">
+                className="font-bold text-lg">
                   <Link href="/artists" onClick={() => setNavbar(false)} prefetch={false}>
                   Our Roster
                   </Link>
                 </li>
                 <li 
-                className="font-black text-xl">
+                className="font-bold text-lg">
                   <Link href="/sync" onClick={() => setNavbar(false)} prefetch={false}>
                   Sync Placements
                   </Link>
                 </li>
                 <li 
-                className="font-black text-xl">
+                className="font-bold text-lg">
                   <Link href="/submissions" onClick={() => setNavbar(false)} prefetch={false}>
                   Artist Submissions
                   </Link>
