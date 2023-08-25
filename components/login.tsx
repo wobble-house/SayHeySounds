@@ -42,11 +42,11 @@ export default function LoginButton() {
         <div className="flex flex-row items-center">
 <Link href={'/'}>
 <div className="flex flex-row items-center">
-        <p className="font-bold pl-1">Hi, </p><AuthCheck/><p> ! </p>
+        <p className="font-bold pl-1 text-black dark:text-white">Hi, </p><AuthCheck/><p className="font-bold text-black dark:text-white"> ! </p>
         </div>
 </Link>
-      <div className="flex ml-3 pt-2 hover:scale-105">
-    <button className=" " onClick={handleSignOut}>Sign out</button>  
+      <div className="flex hover:scale-105">
+    <button className="font-bold pl-1 text-black dark:text-white" onClick={handleSignOut}>Sign out</button>  
     </div>
     </div>
     </div>
@@ -60,6 +60,8 @@ function AuthCheck(){
   if (data == undefined)
   return(<></>)
   else return (
-<p className="text-black dark:text-white"> {data.firstName} </p>
+    <Link href={'/dashboard'}>
+<p className="text-black dark:text-white font-bold"> {data.firstName} </p>
+</Link>
   )
 }

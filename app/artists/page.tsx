@@ -3,6 +3,8 @@ import { ArtistList } from "./artists"
 import { Animation } from "../../utils/animation/animation"
 import firebase_app from "../../utils/Google/firebase/config";
 import { collection, getFirestore, query, where, getDocs } from "firebase/firestore";
+import Nav from "@/components/nav";
+import LoginButton from "@/components/login";
 
 export const dynamic = 'auto'
 export const dynamicParams = true
@@ -48,8 +50,9 @@ export default async function Artists() {
   const activeArtists = await getArtists({status:"Active"})
     return (
       <>
+      <Nav><LoginButton/></Nav>
        <Animation mode={'wait'} initial={true}>
-        <div className="flex flex-col min-h-screen mx-auto max-w-4xl text-center mt-12">
+        <div className="flex flex-col min-h-screen mx-auto max-w-4xl text-center mt-20">
         <ArtistList data={activeArtists}/>
         </div>
         </Animation>

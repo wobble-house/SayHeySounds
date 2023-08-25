@@ -1,7 +1,6 @@
 'use client';
 import Link from 'next/link';
 import React, { useState, useRef, useEffect } from "react";
-import { Header } from './section';
 
 export default function Nav({children}) {
   const Navref = useRef();
@@ -56,7 +55,6 @@ export default function Nav({children}) {
               </div>
             </div>
           </div>
-            <Header>
             <div ref={Navref} className={`flex h-full z-20 md:mx-auto content-center items-center bg-white dark:bg-black md:bg-transparent dark:md:bg-transparent justify-center md:block ${navbar ? 'sticky' : 'hidden'}`}>
               <ul  className="text-center flex flex-col md:flex-row gap-10">
                 <li 
@@ -92,7 +90,6 @@ export default function Nav({children}) {
                 {children}
               </ul>
           </div>
-          </Header>
           </div>
           </div>
           

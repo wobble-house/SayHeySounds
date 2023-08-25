@@ -1,11 +1,14 @@
 import Image from "next/image";
 import Section from "@/components/section";
+import Nav from "@/components/nav";
+import LoginButton from "@/components/login";
 
 export default function Loading() {
     return (
       <>
+      <Nav><LoginButton/></Nav>
 <Section>
-<div className="relative min-h-screen mx-auto mt-10">
+<div className="relative min-h-screen mx-auto mt-20">
          <div className="flex items-center w-96 mx-auto">
         <Image
           className="relative"

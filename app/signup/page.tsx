@@ -1,6 +1,8 @@
 import "server-only";
 import SignUpForm, { GoogleSignupButton } from "./signup";
 import { Animation } from "@/utils/animation/animation";
+import Nav from "@/components/nav";
+import LoginButton from "@/components/login";
 
 export const metadata = {
     title: 'Sign-Up',
@@ -10,8 +12,9 @@ export const metadata = {
 export default function Page() {
     return (
         <>
+        <Nav><LoginButton/></Nav>
 <Animation mode={'wait'} initial={'false'}>
-    <div className="flex">
+    <div className="flex mt-20">
         <div className="mx-auto relative">
             <p className="py-5 text-black dark:text-white max-w-xs">
                 Sign up to learn more about us!

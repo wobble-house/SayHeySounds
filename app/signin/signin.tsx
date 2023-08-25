@@ -13,16 +13,15 @@ export default function SignInForm(){
 
     const handleSigninForm = async (event) => {
         event.preventDefault()
-
         const { result, error } = await signIn(email, password);
-
         if (error) {
             return console.log(error)
         }
-
         // else successful
         console.log(result)
-        return router.push('/');
+        return (
+          router.push('/dashboard')
+        )
     }
 
 

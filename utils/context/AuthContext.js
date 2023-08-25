@@ -6,7 +6,6 @@ import {
 } from 'firebase/auth';
 import firebase_app from 'utils/Google/firebase/config';
 import Loading from '../../app/loading';
-import LoginButton from '@/components/login';
 
 const auth = getAuth(firebase_app);
 
