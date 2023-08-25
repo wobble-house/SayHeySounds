@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Section from "@/components/section";
+import { LoadingSection } from "@/components/section";
 import Nav from "@/components/nav";
 import LoginButton from "@/components/login";
 
@@ -7,9 +7,9 @@ export default function Loading() {
     return (
       <>
       <Nav><LoginButton/></Nav>
-<Section>
+<LoadingSection>
 <div className="relative min-h-screen mx-auto mt-20">
-         <div className="flex items-center w-96 mx-auto">
+         <div className="flex items-center w-64 mx-auto animate-pulse">
         <Image
           className="relative"
           src="/logos/sayheysoundslogo.webp"
@@ -33,7 +33,7 @@ export default function Loading() {
           </div>
         </div>
       </div>
-    </Section>
+    </LoadingSection>
     </>
     );
 }

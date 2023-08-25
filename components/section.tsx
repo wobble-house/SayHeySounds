@@ -16,7 +16,27 @@ export default function Section({ children }) {
         initial={false}
           style={{
             opacity: isInView ? 1 : 0,
-            transition: "all 0.7s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s"
+            transition: "all 0.3s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s"
+          }}
+        >
+          {children}
+        </motion.div>
+      </motion.section>
+    );
+  }
+
+  export function LoadingSection({ children }) {
+    const sectionRef = useRef(null);
+    const isInView = useInView(sectionRef, { once: false });
+  
+    return (
+      <motion.section layout className="overscroll-auto sticky-top-0" ref={sectionRef}>
+        <motion.div
+        layout
+        initial={false}
+          style={{
+            opacity: isInView ? 1 : 0.75,
+            transition: "all 0.2s cubic-bezier(0.17, 0.55, 0.55, 1) 0.3s"
           }}
         >
           {children}
@@ -61,7 +81,7 @@ export function Header({children}){
         initial={false}
           style={{
             opacity: isInView ? 1 : 0,
-            transition: "all 0.5s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s"
+            transition: "all 0.3s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s"
           }}
         >
           {children}
