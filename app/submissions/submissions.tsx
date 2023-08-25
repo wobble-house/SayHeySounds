@@ -4,6 +4,10 @@ import React from "react";
 import signUp, { signUpGoogle } from "../../utils/Google/firebase/auth/signup"
 import { useRouter } from 'next/navigation'
 import Section from "@/components/section";
+import { getAuth } from 'firebase/auth';
+import firebase_app from "@/utils/Google/firebase/config";
+
+const auth = getAuth(firebase_app)
 
 export default function SubmitBrief(){
     const [firstName, setFirstName] = React.useState('')

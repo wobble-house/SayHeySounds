@@ -9,15 +9,15 @@ import { use } from "react";
 
 const auth = getAuth(firebase_app);
 
-function AdminData(){
+function UserData(){
     const user = use(getDocument("users", auth?.currentUser?.uid ))
     const data = user.result.data();
     return (
-<AdminContent data={data}/>
+<UserContent data={data}/>
 )      
 }
 
-export function AdminContent({data}) {
+export function UserContent({data}) {
     const router = useRouter()
     const [firstName, setFirstName] = React.useState(() => data.firstName)
     const [lastName, setLastName] = React.useState(() => data.lastName)
@@ -95,8 +95,8 @@ export function AdminContent({data}) {
     
 }
 
-export default function Admin(){
+export default function UserSubmissions(){
     if (auth.currentUser != null)
-    return <AdminData/>
+    return <UserData/>
     else <></>
 }
