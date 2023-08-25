@@ -95,7 +95,7 @@ export function AdminContent({data}) {
     
 }
 
-export default function DashboardDisplay(){
+export default function Admin(){
     const router = useRouter()
     if (auth.currentUser != null)
     return <AdminData/>

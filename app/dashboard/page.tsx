@@ -1,16 +1,19 @@
+import 'server-only'
 import React from "react";
-import DashboardDisplay from "./dashboard-display";
 import { Animation } from '@/utils/animation/animation';
 import Section, { Header } from '@/components/section';
 import Nav from '@/components/nav';
 import LoginButton from '@/components/login';
+import Admin from "./admin-display";
 
 export const metadata = {
     title: 'Dashboard',
     description: 'Secretsssss',
   }
 
-export default function Dashboard() {
+
+export default async function Dashboard() {
+    
     return (
         <>
         <Nav><LoginButton/></Nav>
@@ -20,10 +23,12 @@ export default function Dashboard() {
 <h2 className="text-center text-3xl font-black hover:scale-105">Dashboard</h2>
 </Header>
 <Section>
-    <DashboardDisplay/>
+    <Admin />
+
 </Section>
     </div>
 </Animation>
 </>
     )
 }
+

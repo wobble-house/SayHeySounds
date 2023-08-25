@@ -33,13 +33,15 @@ export default function RootLayout({
     <html lang="en" style={{scrollBehavior:'smooth'}}>
         <body className="relative mx-auto overscroll-auto no-scrollbar text-black dark:text-white">
           <GABody/>
+          <AuthContextProvider>
           <Suspense fallback={<Loading/>}>
-            <AuthContextProvider>
+            
                 <main className="relative min-w-screen mx-auto pt-5">
                     {children}
                 </main>
-            </AuthContextProvider>
+            
             </Suspense>
+            </AuthContextProvider>
             <Footer/>
       </body>
     </html>
