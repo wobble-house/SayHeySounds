@@ -91,7 +91,7 @@ export function GoogleSigninButton(){
     }
     // else successful
     console.log(result)
-    return router.push('/');
+    return router.push('/dashboard');
 }
     return(
         <Section>

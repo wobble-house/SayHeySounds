@@ -22,7 +22,7 @@ export default function SignUpForm(){
         }
         // else successful
         console.log(result)
-        return router.push('/');
+        return router.push('/dashboard');
     }
 
     const item = {
@@ -112,7 +112,7 @@ export function GoogleSignupButton(){
     }
     // else successful
     console.log(result)
-    return router.push('/');
+    return router.push('/dashboard');
 }
   return(
       <Section>

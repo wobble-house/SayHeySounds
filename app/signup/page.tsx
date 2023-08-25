@@ -9,7 +9,7 @@ export const metadata = {
     description: 'Sign Up to learn more about SayHeySounds',
   }
   
-export default function Page() {
+export default function Signup() {
     return (
         <>
         <Nav><LoginButton/></Nav>

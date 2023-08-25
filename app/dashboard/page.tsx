@@ -1,4 +1,3 @@
-import 'server-only'
 import React from "react";
 import DashboardDisplay from "./dashboard-display";
 import { Animation } from '@/utils/animation/animation';
@@ -26,5 +25,5 @@ export default function Dashboard() {
     </div>
 </Animation>
 </>
-    );
+    )
 }
