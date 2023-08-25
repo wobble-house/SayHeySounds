@@ -17,13 +17,11 @@ export default function Submissions() {
     <Nav><LoginButton/></Nav>
     <Animation mode={'wait'} initial={'false'}>
     <Suspense fallback={<Loading/>}>
-    <div className="relative flex min-h-screen flex-col items-center justify-between mt-20">
+    <div className="relative flex min-h-screen flex-col items-center mt-20">
 <Header>
 <h2 className="text-center text-3xl font-black hover:scale-105">Artist Submissions</h2>
 </Header>
-<Section>
   <SubmitBrief/>
-</Section>
     </div>
     </Suspense>
     </Animation>
