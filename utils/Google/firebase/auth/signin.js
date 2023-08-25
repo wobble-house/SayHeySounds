@@ -37,13 +37,14 @@ export async function signInGoogle() {
     const getdata = getDocument("users", user.uid )
     const userdata = getdata.result.data();
     let data = {}
-    if (userdata !== null) return (data.uid = user.uid,
+    if (userdata !== null) return (
+    data.userId = user.uid,
     data.email = user.email,
     data.firstName = userdata.firstName,
     data.lastName = userdata.lastName,
     data.companyName = userdata.companyName,
     addData("users", user.uid, data))
-    else return ( data.uid = user.uid,
+    else return ( data.userId = user.uid,
     data.email = user.email,
     data.firstName = "First Name",
     data.lastName = "Last Name",

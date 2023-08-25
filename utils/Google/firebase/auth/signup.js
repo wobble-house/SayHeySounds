@@ -10,7 +10,7 @@ export default async function signUp({email, password, data}) {
         error = null;
     try {
         result = await createUserWithEmailAndPassword(auth, email, password).then((user) => {
-        data.uid = user.user.uid;
+        data.userId = user.user.uid;
         addData("users", user.user.uid, data)});
     } catch (e) {
         error = e;
@@ -36,7 +36,7 @@ export async function signUpGoogle() {
     // IdP data available using getAdditionalUserInfo(result)
     // ...
     let data = {}
-    data.uid = user.uid
+    data.userId = user.uid
     data.email = user.email
     data.firstName = "Your First Name"
     data.lastName = "Your Last Name"
