@@ -79,7 +79,7 @@ export function ThemeToggle({mobile}:{mobile: boolean}) {
           <span className="hidden ">
           {isEnabled ? "Enable Light Mode" : "Enable Dark Mode"}
           </span>
-          <div className="icons ">
+          <div className="icons z-20">
             <FontAwesomeIcon icon={faMoon} className="text-neutral-900"/>
             <FontAwesomeIcon icon={faSun} className="text-neutral-50"/>
       </div>

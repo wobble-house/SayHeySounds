@@ -1,31 +1,24 @@
 'use client';
 import Link from 'next/link';
 import React, { useState, useRef, useEffect } from "react";
-import LoginButton from './login';
-import { getAuth, signOut } from 'firebase/auth';
-import firebase_app from '../utils/Google/firebase/config';
+import { Header } from './section';
 
-const auth = getAuth(firebase_app);
-
-export default function Nav() {
+export default function Nav({children}) {
   const Navref = useRef();
   const [navbar, setNavbar] = useState(false);
   const handleClickOutside = () => {
     setNavbar(false)
   }
-  const handleClickInside = () => {
-    setNavbar(!navbar)
-  }
   useOnClickOutside(Navref, handleClickOutside)
   return (
-      <nav className="fixed w-full z-50 md:px-5 pt-16 mx-auto">
+      <div className="fixed w-full z-50 px-5 mx-auto">
         <div className="flex flex-col md:flex-row justify-center mx-auto">
           <div className="flex flex-row">
             <div className="flex flex-row-reverse items-center justify-between md:block">
               <div className="z-10 md:hidden mr-auto relative">
                 <button
-                  className="pr-2 mr-2 pl-2 
-                 outline-none focus:border"
+                  className="bg-white dark:bg-black pr-2 mr-2 pl-2 mt-5
+                 border-2 rounded-md border-black focus:border-2 focus:animate-pulse"
                  onClick={() => setNavbar(!navbar)}
                 >
                   {navbar ? (
@@ -63,11 +56,8 @@ export default function Nav() {
               </div>
             </div>
           </div>
-          <div>
-            <div ref={Navref} className={`flex-1 md:mx-aut0 content-center items-center bg-white md:bg-transparent dark:md:bg-transparent justify-center md:block ${navbar ? 'sticky' : 'hidden'}`}>
-              <div className={`${navbar ? 'sticky' : 'hidden'} mx-auto content-center justify-center text-center`}>
-              <Link href={"/"} onClick={() => setNavbar(false)}>SayHeySounds</Link></div>
-              <LoginButton/>
+            <Header>
+            <div ref={Navref} className={`flex h-full z-20 md:mx-auto content-center items-center bg-white dark:bg-black md:bg-transparent dark:md:bg-transparent justify-center md:block ${navbar ? 'sticky' : 'hidden'}`}>
               <ul  className="text-center flex flex-col md:flex-row gap-10">
                 <li 
                 className="font-black text-xl">
@@ -99,10 +89,13 @@ export default function Nav() {
                   Artist Submissions
                   </Link>
                 </li>
+                {children}
               </ul>
           </div>
-          </div></div>
-      </nav>
+          </Header>
+          </div>
+          </div>
+          
   );
 };
 

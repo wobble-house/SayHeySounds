@@ -1,10 +1,17 @@
+import { Header } from "@/components/section"
+import { Animation } from "@/utils/animation/animation"
+
 export const metadata = {
   title: 'About Us',
   description: 'Sign Up to learn more about SayHeySounds',
 }
 export default function AboutUs() {
   return (
-    <div className="relative flex min-h-screen flex-col items-center justify-between mt-10">
+  <>
+    <Animation mode={'wait'} initial={'false'}>
+      
+    <Header>
+    <div className="relative flex min-h-screen flex-col items-center justify-between">
 
 <h2 className="text-center text-3xl font-black hover:scale-105 max-w-2xl">
 SayHeySounds is a comprehensive music production company operating across 
@@ -15,5 +22,8 @@ prominent hubs in NY, LA, and MI. Our forte lies in One Stop sync licensing,
  projects to meet your unique needs.</h2>
 
     </div>
+    </Header>
+    </Animation>
+    </>
   )
 }

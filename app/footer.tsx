@@ -7,11 +7,13 @@ import {
     faFacebook
   } from "@fortawesome/free-brands-svg-icons";
   import { ThemeToggle } from "@/components/theme-switcher";
+  import Section from "@/components/section";
 
 export default function Footer(){
     return (
-        <div className={`fixed w-full bottom-0 flex flex-col bg-transparent mx-auto justify-center py-2 z-50`}>
-            <div className="mx-auto py-3">
+        <Section>
+        <div className={`w-full sticky flex flex-col bg-transparent mx-auto justify-center py-2 z-50`}>
+            <div className="justify-center mx-auto py-3">
                 <ThemeToggle mobile={false}/>
             </div>
         <div className="flex flex-row justify-center gap-4 text-black-50 mx-auto">
@@ -50,5 +52,6 @@ export default function Footer(){
         </div>
         <p className="text-center">© 2023 by SayHeySounds</p>
     </div>
+    </Section>
     )
 }

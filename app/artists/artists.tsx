@@ -191,8 +191,8 @@ else return (
                 className="save-button"
                 onClick={!isModalOpen ? open : close }>
                     <div className="flex content-center justify-center relative shadow-3xl ">
-                    <div className="items-center content-center justify-center w-full h-full">
-                <div className="fixed px-2 z-30">
+                    <div className="relative justify-start w-full">
+                <div className="absolute px-2 z-30">
                         <h2 className="text-xl uppercase font-bold text-left text-white">{name}</h2>
                   </div>
                 <div className="flex bg-zinc-50 relative w-48 h-32">

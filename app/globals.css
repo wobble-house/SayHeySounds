@@ -11,7 +11,7 @@
   --articleforeground: var(--black);
   --background: var(--white);
   --foreground: var(--black);
-    --transition: 1.1s ease;
+    --transition: 0.5s ease;
 }
 
 @layer utilities {
@@ -39,24 +39,18 @@
   html::before {
       content: "";
       position: fixed;
-      height: 400%;
-      width: 400%;
+      height: 275%;
+      width: 225%;
       rotate: 45deg;
-      margin-left: -200%;
-      margin-top:-200%;
+      margin-left: -75%;
+      margin-top: -65%;
       background: var(--black);
-      transform: translateX(-200%);
+      transform: translateX(-175%);
       transition: transform var(--transition);
       z-index: 0;
     }
-    html.dark section a {
-      color: #60a5fa
-    }
     html.dark .navigation a {
       color: #60a5fa
-    }
-    section a {
-      color: blue
     }
   nav.li > ul { display: none; }
   nav.li:hover > ul { display: block; }
@@ -168,7 +162,6 @@ a {
   background: var(--background);
   transition: transform var(--transition), background var(--transition);
   position: absolute;
-  z-index: 2;
   transform: translate(0);
   transition: transform var(--transition);
 }
@@ -195,7 +188,6 @@ a {
   fill: var(--background);
   height: 15px;
   width: 15px;
-  z-index: 0;
 }
 
 /* When the darkmode class is applied, set the pseudo element position to 0 */

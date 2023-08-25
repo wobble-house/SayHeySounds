@@ -3,6 +3,7 @@ import Image from "next/image";
 import React from "react";
 import signUp, { signUpGoogle } from "../../utils/Google/firebase/auth/signup"
 import { useRouter } from 'next/navigation'
+import Section from "@/components/section";
 
 export default function SignUpForm(){
     const [firstName, setFirstName] = React.useState('')
@@ -43,7 +44,7 @@ export default function SignUpForm(){
       }
 
     return(
-    <section>
+    <Section>
                 <div className="md:whitespace-nowrap relative">
                     <h2 className="md:text-4xl">
                     Sign Up
@@ -97,7 +98,7 @@ export default function SignUpForm(){
                 <button className="" type="submit" >Sign up</button>
               </div>
             </form>
-            </section>
+            </Section>
 )
 }
 
@@ -114,7 +115,7 @@ export function GoogleSignupButton(){
     return router.push('/');
 }
   return(
-      <section>
+      <Section>
       <div className="flex justify-center mx-auto py-5 z-50">
 <button className="flex content-center items-center gap-3" type="button" onClick={handleGoogleSignup}>
   <div className="relative w-[30px] h-[30px]">
@@ -124,6 +125,6 @@ export function GoogleSignupButton(){
   Sign up With Google
 </button>
 </div>
-</section>
+</Section>
   )
 }

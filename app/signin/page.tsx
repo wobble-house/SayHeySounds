@@ -1,5 +1,6 @@
 import 'server-only'
 import SignInForm, { GoogleSigninButton } from "./signin";
+import { Animation } from '@/utils/animation/animation';
 
 export const metadata = {
     title: 'Sign-In',
@@ -9,6 +10,7 @@ export const metadata = {
 export default function Page() {
     return (
         <>
+<Animation mode={'wait'} initial={'false'}>
     <div className="flex">
         <div className="mx-auto relative">
             <SignInForm/>
@@ -16,6 +18,7 @@ export default function Page() {
             <GoogleSigninButton/>
         </div>
     </div>
-    </>
+</Animation>
+</>
     );
 }

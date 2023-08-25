@@ -1,6 +1,5 @@
 import 'server-only'
 import './globals.css'
-import { Animation } from '../utils/animation/animation'
 import {GABody} from '../utils/Google/analytics/google-analytics'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
@@ -12,6 +11,7 @@ import { faFontAwesome } from '@fortawesome/free-brands-svg-icons'
 import { fas } from '@fortawesome/free-solid-svg-icons'
 import '@fortawesome/fontawesome-svg-core/styles.css'
 import { AuthContextProvider } from '../utils/context/AuthContext'
+import LoginButton from '@/components/login'
 config.autoAddCss = false
 library.add(fas, faFontAwesome)
 
@@ -33,15 +33,13 @@ export default function RootLayout({
     <html lang="en" style={{scrollBehavior:'smooth'}}>
         <body className="relative mx-auto overscroll-auto no-scrollbar text-black dark:text-white">
           <GABody/>
-          <Animation mode={'wait'} initial={'false'}>
             <AuthContextProvider>
-                <Nav/>
-                <main className="relative min-w-screen mx-auto pt-24">
+                <Nav><LoginButton/></Nav>
+                <main className="relative min-w-screen mx-auto pt-20">
                     {children}
                 </main>
             </AuthContextProvider>
-            </Animation>
-          <Footer/>
+            <Footer/>
       </body>
     </html>
   )

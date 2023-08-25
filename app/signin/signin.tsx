@@ -4,6 +4,7 @@ import React from "react";
 import signIn from "../../utils/Google/firebase/auth/signin";
 import { useRouter } from 'next/navigation'
 import { signInGoogle } from "../../utils/Google/firebase/auth/signin";
+import Section from "@/components/section";
 
 export default function SignInForm(){
     const [email, setEmail] = React.useState('')
@@ -45,7 +46,7 @@ export default function SignInForm(){
       }
 
     return(
-    <section>
+    <Section>
 
         <h2 className="px-5 py-10 md:text-4xl">
             Sign In
@@ -77,7 +78,7 @@ export default function SignInForm(){
               </div>
 
             </form>
-            </section>
+            </Section>
 )
 }
 
@@ -94,7 +95,7 @@ export function GoogleSigninButton(){
     return router.push('/');
 }
     return(
-        <section>
+        <Section>
         <div className="flex justify-center mx-auto py-5 z-50">
         <div className="hover:scale-105">
 <button className="flex content-center items-center gap-3" type="button" onClick={handleGoogleSignin}>
@@ -106,6 +107,6 @@ export function GoogleSigninButton(){
 </button>
 </div>
 </div>
-</section>
+</Section>
     )
 }
