@@ -99,5 +99,5 @@ export default function Admin(){
     const router = useRouter()
     if (auth.currentUser != null)
     return <AdminData/>
-    else router.push("/")
+    else <></>
 }

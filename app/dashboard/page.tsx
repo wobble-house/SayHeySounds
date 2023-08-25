@@ -8,14 +8,6 @@ import Admin from "./admin-display";
 import { Suspense } from 'react';
 import Loading from '../loading';
 
-export const dynamic = 'auto'
-export const dynamicParams = true
-export const revalidate = true
-export const fetchCache = 'auto'
-export const runtime = 'nodejs'
-export const preferredRegion = 'auto'
-export const maxDuration = 5
-
 export const metadata = {
     title: 'Dashboard',
     description: 'Secretsssss',
@@ -23,7 +15,6 @@ export const metadata = {
 
 
 export default async function Dashboard() {
-    
     return (
         <>
         <Nav><LoginButton/></Nav>
