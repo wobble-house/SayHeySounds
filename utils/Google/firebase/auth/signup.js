@@ -19,6 +19,23 @@ export default async function signUp({email, password, data}) {
     return { result, error };
 }
 
+export async function subsSignUp({email, password, data, formData}) {
+    let result = null,
+        error = null;
+    try {
+        result = await createUserWithEmailAndPassword(auth, email, password).then((user) => {
+        const id = Math.random().toString(36).slice(2, 22)
+        data.userId = user.user.uid
+        formData.userId = user.user.uid
+        addData("users", data, user.user.uid)
+        addData("submissions", formData, id)})
+    } catch (e) {
+        error = e;
+    }
+
+    return { result, error };
+}
+
 export async function signUpGoogle() {
     const provider = new GoogleAuthProvider();
     let result = null,
