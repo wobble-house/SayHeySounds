@@ -15,7 +15,9 @@ export default function SignInForm(){
         event.preventDefault()
         const { result, error } = await signIn(email, password);
         if (error) {
-            return console.log(error)
+            return (
+              console.log(error)
+            )
         }
         // else successful
         console.log(result)
