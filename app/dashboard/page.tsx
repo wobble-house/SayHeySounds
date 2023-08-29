@@ -25,9 +25,12 @@ export default async function Dashboard() {
 <h2 className="text-center text-3xl font-black hover:scale-105">Dashboard</h2>
 </Header>
 <Section>
+    <div className="flex flex-row gap-20">
     <Admin />
+    <Subs />
+    </div>
 </Section>
-<Subs />
+
     </div>
     </Suspense>
 </Animation>

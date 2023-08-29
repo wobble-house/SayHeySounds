@@ -42,6 +42,7 @@ export function SubsList({subs}:{subs: any[]}){
 
   return(
           <div className="flex flex-col relative">
+            <h2 className="text-xl font-bold">Your Submissions</h2>
               <motion.ul
                 layout
                 initial="hidden"
