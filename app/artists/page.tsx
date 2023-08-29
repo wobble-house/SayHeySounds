@@ -34,20 +34,6 @@ async function getArtists({status}:{status: string}){
   return artists
 };
 
-async function getTracks({name}:{name: string}){
-  const tracks = [];
-  const db = getFirestore(firebase_app)
-  const q = query(collection(db, "track"), where("artistName", "==", name ));
-  const querySnapshot = await getDocs(q)
-  querySnapshot.forEach(doc => {
-    let mytracks = doc.data();
-    mytracks.id = doc.id;
-    tracks.push(mytracks)
-  });
-  
-  return tracks
-};
-
 export default async function Artists() {
   const activeArtists = await getArtists({status:"Active"})
     return (

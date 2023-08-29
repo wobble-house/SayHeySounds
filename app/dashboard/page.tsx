@@ -7,12 +7,15 @@ import LoginButton from '@/components/login';
 import Admin from "./admin-display";
 import { Suspense } from 'react';
 import Loading from '../loading';
+import { getAuth } from 'firebase/auth';
+import firebase_app from '@/utils/Google/firebase/config';
+import Subs from './submissions';
+import { collection, getFirestore, query, where, getDocs } from "firebase/firestore";
 
 export const metadata = {
     title: 'Dashboard',
     description: 'Secretsssss',
   }
-
 
 export default async function Dashboard() {
     return (
@@ -27,6 +30,7 @@ export default async function Dashboard() {
 <Section>
     <Admin />
 </Section>
+<Subs />
     </div>
     </Suspense>
 </Animation>

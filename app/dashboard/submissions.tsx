@@ -1,11 +1,30 @@
 'use client';
-import ImageHandler from "../../components/image-handler";
 import { motion } from "framer-motion";
 import { useState, useRef, useEffect } from "react";
-import {ArtistDetailsCard} from "../../components/details-card";
+import { SubsDetailsCard } from "../../components/details-card";
+import {getDocuments} from "@/utils/Google/firebase/firestore/getData";
+import { getAuth } from "firebase/auth";
+import firebase_app from "@/utils/Google/firebase/config";
+import { use } from "react";
 
-export function ArtistList({data}){
-  const Artistlist = {
+const auth = getAuth(firebase_app);
+
+function SubsData(){
+const subs = []
+const subsdata = use(getDocuments({collectionName:"submissions", fieldPath: "userId", value: auth.currentUser.uid}));
+const data = subsdata.result
+data.forEach(doc => {
+  let mydata = doc.data();
+  mydata.id = doc.id;
+  subs.push(mydata)
+});
+  return (
+<SubsList subs={subs}/>
+)      
+}
+
+export function SubsList({subs}:{subs: any[]}){
+  const subList = {
     visible: { 
       opacity: 1,
       transition: {
@@ -27,18 +46,26 @@ export function ArtistList({data}){
                 layout
                 initial="hidden"
                 whileInView="visible"
-                variants={Artistlist}
+                variants={subList}
                 viewport={{ once: false }}
                 className="flex flex-wrap gap-2 mx-auto text-center place-content-center z-30 relative">
-                 {data.map(docs => (
-                    <ArtistCard 
+                 {subs.map(docs => (
+                    <SubCard 
                     key={docs.id} 
-                    backgroundImage={docs.backgroundImage}
-                    bio={docs.bio}
-                    link={docs.link}
-                    name={docs.name}
-                    profileImage={docs.profileImage}
-                    status={docs.status}/>
+                    additionalNotes={docs.additionalNotes}
+                    budget={docs.budget}
+                    companyName={docs.companyName}
+                    creativeNotes={docs.creativeNotes}
+                    description={docs.description}
+                    email={docs.email}
+                    firstName={docs.firstName}
+                    genre={docs.genre}
+                    lastName={docs.lastName}
+                    phone={docs.phone}
+                    projectName={docs.projectName}
+                    subgenre={docs.subgenre}
+                    userId={docs.userId}
+                    />
                  ))
                   }
               </motion.ul>
@@ -46,26 +73,34 @@ export function ArtistList({data}){
   )
 }
 
-export function ArtistCard({ 
-  backgroundImage,
-  bio,
-  link,
-  name,
-  profileImage,
-  status
+export function SubCard({ 
+  additionalNotes,
+  budget,
+  companyName,
+  creativeNotes,
+  description,
+  email,
+  firstName,
+  genre,
+  lastName,
+  phone,
+  projectName,
+  subgenre,
+  userId,
  }:{ 
-    backgroundImage : {
-        src: string,
-        alt: string
-    },
-    bio: string,
-    link: string,
-    name: string,
-    profileImage: {
-        src: string,
-        alt: string
-    },
-    status: string
+  additionalNotes: string,
+  budget: string,
+  companyName: string,
+  creativeNotes: string,
+  description: string,
+  email: string,
+  firstName: string,
+  genre: string,
+  lastName: string,
+  phone: string,
+  projectName: string,
+  subgenre: string,
+  userId: string,
  }){
   const ref = useRef();
   const [isModalOpen, setModalOpen] = useState(false)
@@ -143,7 +178,7 @@ export function ArtistCard({
  if (isModalOpen) return (
 <motion.li
     layout
-    key={name} 
+    key={projectName} 
     variants={item}
     id="" 
     className="fixed top-0 left-0 w-full h-full grow max-h-screen z-50 mx-auto place-content-center overflow-hidden overscroll-none bg-black"
@@ -161,13 +196,20 @@ export function ArtistCard({
       <span className="text-xl hover:animate-pulse p-3">x</span>
       </button>
                   <div ref={ref}>
-                  <ArtistDetailsCard
-                    backgroundImage={backgroundImage}
-                    bio={bio}
-                    link={link}
-                    name={name}
-                    profileImage={profileImage}
-                    status={status} />
+                  <SubsDetailsCard 
+                    additionalNotes={additionalNotes}
+                    budget={budget}
+                    companyName={companyName}
+                    creativeNotes={creativeNotes}
+                    description={description}
+                    email={email}
+                    firstName={firstName}
+                    genre={genre}
+                    lastName={lastName}
+                    phone={phone}
+                    projectName={projectName}
+                    subgenre={subgenre}
+                    userId={userId} />
                     </div>
                 </motion.div>
                 </div>
@@ -176,7 +218,7 @@ export function ArtistCard({
 else return (
   <motion.li
     layout
-    key={name} 
+    key={projectName} 
     variants={item}
     id="artist-card" 
     className="flex-col artist-card hover:scale-105 relative grow shrink overscroll-none"
@@ -193,15 +235,19 @@ else return (
                     <div className="flex content-center justify-center relative shadow-3xl ">
                     <div className="relative justify-start w-full">
                 <div className="absolute px-2 z-30">
-                        <h2 className="text-xl uppercase font-bold text-left text-white">{name}</h2>
+                        <h2 className="text-xl uppercase font-bold text-left">{projectName}</h2>
                   </div>
-                <div className="flex bg-zinc-50 relative w-48 h-32">
-                  <ImageHandler src={backgroundImage.src} alt={backgroundImage.alt} fallbackSrc={'/images/oof.png'} height={768} width={1024} priority />
+                <div className="flex bg-zinc-50 relative w-48 h-32 text-black">
                 </div>
-
                 </div>
                 </div>
               </motion.button>
               </motion.li>
                 )
               }
+
+export default function Subs(){
+  if (auth.currentUser != null)
+  return <SubsData/>
+  else <></>
+}
