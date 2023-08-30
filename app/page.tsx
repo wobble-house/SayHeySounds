@@ -14,28 +14,26 @@ export const metadata = {
 
 export default function Home() {
   return (
-    <>
-    
+    <> 
     <Nav><LoginButton/></Nav>
-    <Animation mode={'wait'} initial>
-      <Suspense fallback={<Loading/>}>
-   <Header>
-    <div className="flex flex-col items-center mx-auto pb-12 mt-20">
-      <div className="flex place-items-center w-96">
-        <Image
-          className="relative"
-          src="/logos/sayheysoundslogo.webp"
-          alt="SayHeySounds Logo"
-          width={1330}
-          height={1330}
-          priority
-        />
-      </div>
-    </div>
-    </Header>
-    </Suspense>
-    </Animation>
-    
+      <Animation mode={'wait'} initial>
+        <Suspense fallback={<Loading/>}>
+          <Header>
+            <div className="flex flex-col items-center mx-auto pb-12 mt-20">
+              <div className="flex place-items-center w-96">
+                <Image
+                  className="relative"
+                  src="/logos/sayheysoundslogo.webp"
+                  alt="SayHeySounds Logo"
+                  width={1330}
+                  height={1330}
+                  priority
+                />
+              </div>
+            </div>
+          </Header>
+        </Suspense>
+      </Animation>
     </>
   )
 }

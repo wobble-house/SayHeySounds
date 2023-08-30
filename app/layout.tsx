@@ -2,7 +2,6 @@ import 'server-only'
 import './globals.css'
 import {GABody} from '../utils/Google/analytics/google-analytics'
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
 import Footer from './footer'
 import { config } from '@fortawesome/fontawesome-svg-core'
 import { library } from '@fortawesome/fontawesome-svg-core'
@@ -12,8 +11,6 @@ import '@fortawesome/fontawesome-svg-core/styles.css'
 import { AuthContextProvider } from '../utils/context/AuthContext'
 config.autoAddCss = false
 library.add(fas, faFontAwesome)
-
-const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: {
@@ -28,16 +25,16 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" style={{scrollBehavior:'smooth'}}>
+      <html lang="en" style={{scrollBehavior:'smooth'}}>
         <body className="relative mx-auto overscroll-auto no-scrollbar text-black dark:text-white">
           <GABody/>
           <AuthContextProvider>    
-                <main className="relative min-w-screen mx-auto pt-5">
-                    {children}
-                </main>
-            </AuthContextProvider>
-            <Footer/>
-      </body>
-    </html>
+            <main className="relative min-w-screen mx-auto pt-5">
+              {children}
+            </main>
+          </AuthContextProvider>
+          <Footer/>
+        </body>
+      </html>
   )
 }
