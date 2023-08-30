@@ -8,6 +8,7 @@ import Admin from "./admin-display";
 import { Suspense } from 'react';
 import Loading from '../loading';
 import Subs from './submissions';
+import UploadButton from '@/utils/Google/firebase/storage/media-upload';
 
 export const metadata = {
     title: 'Dashboard',
@@ -29,8 +30,8 @@ export default async function Dashboard() {
     <Admin />
     <Subs />
     </div>
+    <UploadButton/>
 </Section>
-
     </div>
     </Suspense>
 </Animation>
