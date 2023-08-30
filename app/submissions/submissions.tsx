@@ -33,6 +33,9 @@ export function UsersSubmitBrief({userData}){
     const [budget, setBudget] = React.useState('')
     const [creativeNotes, setCreativeNotes] = React.useState('')
     const [additionalNotes, setAdditionalNotes] = React.useState('')
+    const [reference1, setReference1] = React.useState('')
+    const [reference2, setReference2] = React.useState('')
+    const [reference3, setReference3] = React.useState('')
     const [userId, setUserId ] = React.useState(auth.currentUser.uid)
     const data = {
       firstName,
@@ -47,14 +50,13 @@ export function UsersSubmitBrief({userData}){
       budget,
       creativeNotes,
       additionalNotes,
-      userId
+      userId,
+      reference1,
+      reference2,
+      reference3
     }
     const router = useRouter()
 
-    function newId(){
-      
-      return newId
-    }
     const handleForm = async (e) => {
       e.preventDefault();
       const id = Math.random().toString(36).slice(2, 22);
@@ -208,6 +210,48 @@ export function UsersSubmitBrief({userData}){
 
                 <div className="flex flex-col shadow-2xl">
                 <label 
+                htmlFor="Reference Track 1" 
+                className="text-xl  relative">
+                    Reference Track 1</label>
+                    <input onChange={(e) => setReference1(e.target.value)} 
+                    value={reference1}
+                    required type="text" 
+                    name="Reference Track 1" 
+                    id="Reference Track 1" 
+                    placeholder="https://www.youtube.com/watch?v=dQw4w9WgXcQ" 
+                    className="focus:outline-none focus:ring-2 ring-green-500 font-light text-gray-500  dark:text-gray-100 "/>
+                </div>
+                
+                <div className="flex flex-col shadow-2xl">
+                <label 
+                htmlFor="Reference Track 2" 
+                className="text-xl  relative">
+                    Reference Track 2</label>
+                    <input onChange={(e) => setReference2(e.target.value)} 
+                    value={reference2}
+                    required type="text" 
+                    name="Reference Track 2" 
+                    id="Reference Track 2" 
+                    placeholder="https://www.youtube.com/watch?v=dQw4w9WgXcQ" 
+                    className="focus:outline-none focus:ring-2 ring-green-500 font-light text-gray-500  dark:text-gray-100 "/>
+                </div>
+
+                <div className="flex flex-col shadow-2xl">
+                <label 
+                htmlFor="Reference Track 3" 
+                className="text-xl  relative">
+                    Reference Track 3</label>
+                    <input onChange={(e) => setReference3(e.target.value)} 
+                    value={reference3}
+                    required type="text" 
+                    name="Reference Track 3" 
+                    id="Reference Track 3" 
+                    placeholder="https://www.youtube.com/watch?v=dQw4w9WgXcQ" 
+                    className="focus:outline-none focus:ring-2 ring-green-500 font-light text-gray-500  dark:text-gray-100 "/>
+                </div>
+
+                <div className="flex flex-col shadow-2xl">
+                <label 
                 htmlFor="Project Name" 
                 className="text-xl relative">
                     {`Name of Project (Ad Campaign, Movie/Short Title, Series Title, Etc)`}</label>
@@ -280,6 +324,9 @@ export function NewUsersSubmitBrief(){
   const [budget, setBudget] = React.useState('')
   const [creativeNotes, setCreativeNotes] = React.useState('')
   const [additionalNotes, setAdditionalNotes] = React.useState('')
+  const [reference1, setReference1] = React.useState('')
+  const [reference2, setReference2] = React.useState('')
+  const [reference3, setReference3] = React.useState('')
   const data = {
     firstName,
     lastName,
@@ -300,6 +347,9 @@ export function NewUsersSubmitBrief(){
     budget,
     creativeNotes,
     additionalNotes,
+    reference1,
+    reference2,
+    reference3
   }
   const router = useRouter()
 
@@ -446,6 +496,49 @@ export function NewUsersSubmitBrief(){
               placeholder="" 
               className="focus:outline-none focus:ring-2 ring-green-500 font-light text-gray-500  dark:text-gray-100 "/>
               </div>
+
+              
+              <div className="flex flex-col shadow-2xl">
+                <label 
+                htmlFor="Reference Track 1" 
+                className="text-xl  relative">
+                    Reference Track 1</label>
+                    <input onChange={(e) => setReference1(e.target.value)} 
+                    value={reference1}
+                    required type="text" 
+                    name="Reference Track 1" 
+                    id="Reference Track 1" 
+                    placeholder="https://www.youtube.com/watch?v=dQw4w9WgXcQ" 
+                    className="focus:outline-none focus:ring-2 ring-green-500 font-light text-gray-500  dark:text-gray-100 "/>
+                </div>
+                
+                <div className="flex flex-col shadow-2xl">
+                <label 
+                htmlFor="Reference Track 2" 
+                className="text-xl  relative">
+                    Reference Track 2</label>
+                    <input onChange={(e) => setReference2(e.target.value)} 
+                    value={reference2}
+                    required type="text" 
+                    name="Reference Track 2" 
+                    id="Reference Track 2" 
+                    placeholder="https://www.youtube.com/watch?v=dQw4w9WgXcQ" 
+                    className="focus:outline-none focus:ring-2 ring-green-500 font-light text-gray-500  dark:text-gray-100 "/>
+                </div>
+
+                <div className="flex flex-col shadow-2xl">
+                <label 
+                htmlFor="Reference Track 3" 
+                className="text-xl  relative">
+                    Reference Track 3</label>
+                    <input onChange={(e) => setReference3(e.target.value)} 
+                    value={reference3}
+                    required type="text" 
+                    name="Reference Track 3" 
+                    id="Reference Track 3" 
+                    placeholder="https://www.youtube.com/watch?v=dQw4w9WgXcQ" 
+                    className="focus:outline-none focus:ring-2 ring-green-500 font-light text-gray-500  dark:text-gray-100 "/>
+                </div>
 
               <div className="flex flex-col shadow-2xl">
               <label 

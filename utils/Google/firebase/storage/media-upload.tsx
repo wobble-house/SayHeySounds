@@ -64,7 +64,7 @@ export function MediaUpload({userId}) {
     return (
         <div>
             <input type="file" onChange={handleChange} accept="audio/*" />
-            <button onClick={handleUpload}>Upload to Firebase</button>
+            <button onClick={handleUpload}>Upload audio</button>
             <p>{percent} "% done"</p>
         </div>
     );
