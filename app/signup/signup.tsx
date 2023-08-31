@@ -25,24 +25,6 @@ export default function SignUpForm(){
         return router.push('/dashboard');
     }
 
-    const item = {
-        visible: { 
-          opacity: 1,
-          y: 0,
-          transition: {
-            when: "beforeChildren",
-            staggerChildren: 0.3,
-          },
-        },
-        hidden: { 
-          opacity: 0,
-          y:-100,
-          transition: {
-            when: "afterChildren",
-          },
-        },
-      }
-
     return(
     <Section>
                 <div className="md:whitespace-nowrap relative">
@@ -50,10 +32,7 @@ export default function SignUpForm(){
                     Sign Up
                     </h2>
                 </div>
-
-
             <form onSubmit={handleForm} className="max-w-[222px] mx-auto z-50">
-
             <div className="flex flex-col shadow-2xl">
                 <label 
                 htmlFor="First Name" 

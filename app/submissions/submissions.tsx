@@ -70,24 +70,6 @@ export function UsersSubmitBrief({userData}){
       return router.push('/dashboard');
   }
 
-    const item = {
-        visible: { 
-          opacity: 1,
-          y: 0,
-          transition: {
-            when: "beforeChildren",
-            staggerChildren: 0.3,
-          },
-        },
-        hidden: { 
-          opacity: 0,
-          y:-100,
-          transition: {
-            when: "afterChildren",
-          },
-        },
-      }
-
     return(
     <Section>
                 <div className="md:whitespace-nowrap relative">
@@ -363,24 +345,6 @@ export function NewUsersSubmitBrief(){
       console.log(result)
       return router.push('/dashboard');
   }
-
-  const item = {
-      visible: { 
-        opacity: 1,
-        y: 0,
-        transition: {
-          when: "beforeChildren",
-          staggerChildren: 0.3,
-        },
-      },
-      hidden: { 
-        opacity: 0,
-        y:-100,
-        transition: {
-          when: "afterChildren",
-        },
-      },
-    }
 
   return(
   <Section>

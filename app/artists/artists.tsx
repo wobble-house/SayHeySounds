@@ -1,48 +1,35 @@
 'use client';
 import ImageHandler from "../../components/image-handler";
 import { motion } from "framer-motion";
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef } from "react";
 import {ArtistDetailsCard} from "../../components/details-card";
+import { animationList, dropIn, animationItem } from "@/utils/animation/animation";
+import { useOnClickOutside } from "../click-handler";
 
 export function ArtistList({data}){
-  const Artistlist = {
-    visible: { 
-      opacity: 1,
-      transition: {
-        when: "beforeChildren",
-        staggerChildren: 0.2,
-      },
-    },
-    hidden: { 
-      opacity: 0,
-      transition: {
-        when: "afterChildren",
-      },
-    },
-  }
-
   return(
-          <div className="flex flex-col relative">
-              <motion.ul
-                layout
-                initial="hidden"
-                whileInView="visible"
-                variants={Artistlist}
-                viewport={{ once: false }}
-                className="flex flex-wrap gap-2 mx-auto text-center place-content-center z-30 relative">
-                 {data.map(docs => (
-                    <ArtistCard 
-                    key={docs.id} 
-                    backgroundImage={docs.backgroundImage}
-                    bio={docs.bio}
-                    link={docs.link}
-                    name={docs.name}
-                    profileImage={docs.profileImage}
-                    status={docs.status}/>
-                 ))
-                  }
-              </motion.ul>
-              </div>
+        <div className="flex flex-col relative">
+          <motion.ul
+            layout
+            initial="hidden"
+            whileInView="visible"
+            variants={animationList}
+            viewport={{ once: false }}
+            className="flex flex-wrap gap-2 mx-auto text-center place-content-center z-30 relative"
+            >
+              {data.map(docs => (
+                <ArtistCard 
+                  key={docs.id} 
+                  backgroundImage={docs.backgroundImage}
+                  bio={docs.bio}
+                  link={docs.link}
+                  name={docs.name}
+                  profileImage={docs.profileImage}
+                  status={docs.status}
+                />
+              ))}
+          </motion.ul>
+        </div>
   )
 }
 
@@ -72,79 +59,11 @@ export function ArtistCard({
   const close = () => setModalOpen(false);
   const open = () => setModalOpen(true);
   useOnClickOutside(ref, () => setModalOpen(false));
-
-  const dropIn = {
-      hidden: {
-          opacity: 0,
-          scale: 0,
-          transition: {
-            duration: 2,
-            type: "spring",
-            damping: 40,
-            stiffness: 250,
-          },
-      },
-      visible: {
-          opacity: 1,
-          scale: 1,
-          transition: {
-              duration: 1.5,
-              type: "spring",
-              damping: 40,
-              stiffness: 250,
-          }
-      },
-      exit: {
-          opacity: 0,
-          scale:0
-      },
-  };
-  const item = {
-    visible: { 
-      opacity: 1,
-      scale: 1,
-      y: 0,
-      transition: {
-        when: "beforeChildren",
-      },
-    },
-    hidden: { 
-      opacity: 0,
-      scale: 0,
-      y:-100,
-      transition: {
-        when: "afterChildren",
-      },
-    },
-    exit: {
-      opacity: 0,
-  },
-  }
-
-  function useOnClickOutside(ref, handler) {
-    useEffect(
-      () => {
-        const listener = (event) => {
-          if (!ref.current || ref.current.contains(event.target)) {
-            return;
-          }
-          handler(event);
-        };
-        document.addEventListener("mousedown", listener);
-        document.addEventListener("touchstart", listener);
-        return () => {
-          document.removeEventListener("mousedown", listener);
-          document.removeEventListener("touchstart", listener);
-        };
-      },
-      [ref, handler]
-    );
-  }
  if (isModalOpen) return (
 <motion.li
     layout
     key={name} 
-    variants={item}
+    variants={animationItem}
     id="" 
     className="fixed top-0 left-0 w-full h-full grow max-h-screen z-50 mx-auto place-content-center overflow-hidden overscroll-none bg-black"
     >
@@ -177,7 +96,7 @@ else return (
   <motion.li
     layout
     key={name} 
-    variants={item}
+    variants={animationItem}
     id="artist-card" 
     className="flex-col artist-card hover:scale-105 relative grow shrink overscroll-none"
     >

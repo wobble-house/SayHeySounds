@@ -26,35 +26,11 @@ export default function SignInForm(){
         )
     }
 
-
-
-    const item = {
-        visible: { 
-          opacity: 1,
-          y: 0,
-          transition: {
-            when: "beforeChildren",
-            staggerChildren: 0.3,
-          },
-        },
-        hidden: { 
-          opacity: 0,
-          y:-100,
-          transition: {
-            when: "afterChildren",
-          },
-        },
-      }
-
     return(
     <Section>
-
         <h2 className="px-5 py-10 md:text-4xl">
             Sign In
             </h2>
-
-
-
             <form onSubmit={handleSigninForm} className="">
             <div className="flex flex-col pr-2 shadow-2xl">
                 <label 

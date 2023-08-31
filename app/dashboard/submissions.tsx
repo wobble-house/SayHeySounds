@@ -6,6 +6,8 @@ import {getDocuments} from "@/utils/Google/firebase/firestore/getData";
 import { getAuth } from "firebase/auth";
 import firebase_app from "@/utils/Google/firebase/config";
 import { use } from "react";
+import { useOnClickOutside } from "../click-handler";
+import { animationList, dropIn, animationItem } from "@/utils/animation/animation";
 
 const auth = getAuth(firebase_app);
 
@@ -24,21 +26,6 @@ data.forEach(doc => {
 }
 
 export function SubsList({subs}:{subs: any[]}){
-  const subList = {
-    visible: { 
-      opacity: 1,
-      transition: {
-        when: "beforeChildren",
-        staggerChildren: 0.2,
-      },
-    },
-    hidden: { 
-      opacity: 0,
-      transition: {
-        when: "afterChildren",
-      },
-    },
-  }
 
   return(
           <div className="flex flex-col relative">
@@ -47,7 +34,7 @@ export function SubsList({subs}:{subs: any[]}){
                 layout
                 initial="hidden"
                 whileInView="visible"
-                variants={subList}
+                variants={animationList}
                 viewport={{ once: false }}
                 className="flex flex-wrap gap-2 mx-auto text-center place-content-center z-30 relative">
                  {subs.map(docs => (
@@ -108,79 +95,12 @@ export function SubCard({
   const close = () => setModalOpen(false);
   const open = () => setModalOpen(true);
   useOnClickOutside(ref, () => setModalOpen(false));
-
-  const dropIn = {
-      hidden: {
-          opacity: 0,
-          scale: 0,
-          transition: {
-            duration: 2,
-            type: "spring",
-            damping: 40,
-            stiffness: 250,
-          },
-      },
-      visible: {
-          opacity: 1,
-          scale: 1,
-          transition: {
-              duration: 1.5,
-              type: "spring",
-              damping: 40,
-              stiffness: 250,
-          }
-      },
-      exit: {
-          opacity: 0,
-          scale:0
-      },
-  };
-  const item = {
-    visible: { 
-      opacity: 1,
-      scale: 1,
-      y: 0,
-      transition: {
-        when: "beforeChildren",
-      },
-    },
-    hidden: { 
-      opacity: 0,
-      scale: 0,
-      y:-100,
-      transition: {
-        when: "afterChildren",
-      },
-    },
-    exit: {
-      opacity: 0,
-  },
-  }
-
-  function useOnClickOutside(ref, handler) {
-    useEffect(
-      () => {
-        const listener = (event) => {
-          if (!ref.current || ref.current.contains(event.target)) {
-            return;
-          }
-          handler(event);
-        };
-        document.addEventListener("mousedown", listener);
-        document.addEventListener("touchstart", listener);
-        return () => {
-          document.removeEventListener("mousedown", listener);
-          document.removeEventListener("touchstart", listener);
-        };
-      },
-      [ref, handler]
-    );
-  }
+  
  if (isModalOpen) return (
 <motion.li
     layout
     key={projectName} 
-    variants={item}
+    variants={animationItem}
     id="" 
     className="fixed top-0 left-0 w-full h-full grow max-h-screen z-50 mx-auto place-content-center overflow-hidden overscroll-none bg-black"
     >
@@ -220,7 +140,7 @@ else return (
   <motion.li
     layout
     key={projectName} 
-    variants={item}
+    variants={animationItem}
     id="artist-card" 
     className="flex-col artist-card hover:scale-105 relative grow shrink overscroll-none"
     >

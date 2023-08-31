@@ -5,6 +5,7 @@ import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 import remarkGfm from "remark-gfm";
 import remarkBreaks from "remark-breaks";
 import ImageHandler from "./image-handler";
+import { animationList, animationItem } from "@/utils/animation/animation";
 
 export function ArtistDetailsCard({ 
   backgroundImage,
@@ -27,55 +28,7 @@ export function ArtistDetailsCard({
     },
     status: string,
  }){
-    const list = {
-        visible: { 
-          opacity: 1,
-          transition: {
-            when: "beforeChildren",
-            staggerChildren: 0.3,
-          },
-        },
-        hidden: { 
-          opacity: 0,
-          transition: {
-            when: "afterChildren",
-          },
-        },
-      };
-    
-      const item = {
-        visible: { 
-          opacity: 1,
-          transition: {
-            when: "beforeChildren",
-            staggerChildren: 0.3,
-          },
-        },
-        hidden: { 
-          opacity: 0,
-          transition: {
-            when: "afterChildren",
-          },
-        },
-      };
 
-      const listitem = {
-        visible: { 
-          opacity: 1,
-          y: 0,
-          transition: {
-            when: "beforeChildren",
-            staggerChildren: 0.3,
-          },
-        },
-        hidden: { 
-          opacity: 0,
-          y: 200,
-          transition: {
-            when: "afterChildren",
-          },
-        },
-      };
       return (
         <div className="flex flex-col relative px-4 max-w-sm md:max-w-2xl lg:max-w-6xl overscroll-contain bg-black">
             <motion.div 
@@ -83,13 +36,13 @@ export function ArtistDetailsCard({
                 layout
                 initial="hidden"
                 animate="visible"
-                variants={item} className="relative z-30">
+                variants={animationItem} className="relative z-30">
                 <h2 className=" relative text-white  text-left px-5 md:text-4xl">{name}</h2>
               </motion.div>
             <motion.div layout
                 initial="hidden"
                 animate="visible"
-                variants={list}
+                variants={animationList}
                 className="shadow-2xl block">
               <div className="flex flex-col gap-2 "> 
                     <div className="flex flex-col md:flex-row grow shrink gap-8 pb-5 align-middle">
@@ -149,55 +102,6 @@ export function SubsDetailsCard({
   subgenre: string,
   userId: string,
  }){
-    const list = {
-        visible: { 
-          opacity: 1,
-          transition: {
-            when: "beforeChildren",
-            staggerChildren: 0.3,
-          },
-        },
-        hidden: { 
-          opacity: 0,
-          transition: {
-            when: "afterChildren",
-          },
-        },
-      };
-    
-      const item = {
-        visible: { 
-          opacity: 1,
-          transition: {
-            when: "beforeChildren",
-            staggerChildren: 0.3,
-          },
-        },
-        hidden: { 
-          opacity: 0,
-          transition: {
-            when: "afterChildren",
-          },
-        },
-      };
-
-      const listitem = {
-        visible: { 
-          opacity: 1,
-          y: 0,
-          transition: {
-            when: "beforeChildren",
-            staggerChildren: 0.3,
-          },
-        },
-        hidden: { 
-          opacity: 0,
-          y: 200,
-          transition: {
-            when: "afterChildren",
-          },
-        },
-      };
       return (
         <div className="flex flex-col relative px-4 max-w-sm md:max-w-2xl lg:max-w-6xl overscroll-contain bg-black">
             <motion.div 
@@ -205,13 +109,13 @@ export function SubsDetailsCard({
                 layout
                 initial="hidden"
                 animate="visible"
-                variants={item} className="relative z-30">
+                variants={animationItem} className="relative z-30">
                 <h2 className=" relative text-white  text-left px-5 md:text-4xl">{projectName}</h2>
               </motion.div>
             <motion.div layout
                 initial="hidden"
                 animate="visible"
-                variants={list}
+                variants={animationList}
                 className="shadow-2xl block">
               <div className="flex flex-col gap-2 "> 
                     <div className="flex flex-col md:flex-row grow shrink gap-8 pb-5 align-middle">
