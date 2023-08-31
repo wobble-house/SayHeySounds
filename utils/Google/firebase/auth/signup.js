@@ -11,7 +11,7 @@ export default async function signUp({email, password, data}) {
     try {
         result = await createUserWithEmailAndPassword(auth, email, password).then((user) => {
         data.userId = user.user.uid;
-        addData("users", user.user.uid, data)});
+        addData("users", data, user.user.uid)});
     } catch (e) {
         error = e;
     }
