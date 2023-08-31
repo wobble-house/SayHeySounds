@@ -38,7 +38,7 @@ export default async function Artists() {
   const activeArtists = await getArtists({status:"Active"})
     return (
       <>
-      <Nav><LoginButton/></Nav>
+      <LoginButton/>
        <Animation mode={'wait'} initial={true}>
        <Suspense fallback={<Loading/>}>
         <div className="flex flex-col min-h-screen mx-auto max-w-4xl text-center mt-20">

@@ -6,7 +6,6 @@ import LoginButton from "@/components/login";
 export default function Loading() {
     return (
     <>
-      <Nav><LoginButton/></Nav>
       <LoadingSection>
         <div className="relative min-h-screen mx-auto mt-20">
           <div className="flex items-center w-64 mx-auto animate-pulse">

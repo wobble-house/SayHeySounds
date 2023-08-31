@@ -13,7 +13,7 @@ export const metadata = {
 export default function AboutUs() {
   return (
   <>
-    <Nav><LoginButton/></Nav>
+    <LoginButton/>
     <Animation mode={'wait'} initial={'false'}>
       <Suspense fallback={<Loading/>}>
         <Header>

@@ -14,7 +14,7 @@ export const metadata = {
 export default function Sync() {
   return (
     <>
-    <Nav><LoginButton/></Nav>
+    <LoginButton/>
     <Animation mode={'wait'} initial={'false'}>
     <Suspense fallback={<Loading/>}>
     <div className="relative flex min-h-screen flex-col items-center justify-between mt-20">

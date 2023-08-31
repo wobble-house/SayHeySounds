@@ -8,7 +8,6 @@ import { faArrowDown } from "@fortawesome/free-solid-svg-icons";
 export default function Section({ children }) {
     const sectionRef = useRef(null);
     const isInView = useInView(sectionRef, { once: false });
-  
     return (
       <motion.section layout className="overscroll-auto sticky-top-0" ref={sectionRef}>
         <motion.div
@@ -88,4 +87,23 @@ export function Header({children}){
         </motion.div>
       </motion.section>
   )
+}
+
+export function SectionSwap({ children }) {
+  const sectionSwapRef = useRef(null);
+  const isInView = useInView(sectionSwapRef, { once: false });
+  return (
+    <motion.section layout className="overscroll-auto sticky-top-0 w-full h-full" ref={sectionSwapRef}>
+      <motion.div
+      layout
+      initial={false}
+        style={{
+          opacity: isInView ? 1 : 0,
+          transition: "all 0.2s cubic-bezier(0.17, 0.55, 0.55, 1) 0.3s"
+        }}
+      >
+        {children}
+      </motion.div>
+    </motion.section>
+  );
 }

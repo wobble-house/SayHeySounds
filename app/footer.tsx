@@ -3,12 +3,13 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {faInstagram, faSoundcloud, faYoutube, faFacebook} from "@fortawesome/free-brands-svg-icons";
 import { ThemeToggle } from "@/components/theme-switcher";
 import Section from "@/components/section";
+import Nav from "@/components/nav";
 
 export default function Footer(){
     return (
     <>
         <Section>
-            <div className={`w-full sticky flex flex-col bg-transparent mx-auto justify-center py-2 z-50`}>
+            <div className={`w-full sticky flex flex-col bg-transparent mx-auto justify-center py-2 z-50`}><Nav><></></Nav>
                 <div className="justify-center mx-auto py-3">
                     <ThemeToggle mobile={false}/>
                 </div>

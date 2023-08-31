@@ -14,7 +14,7 @@ export const metadata = {
 export default function Signin() {
     return (
         <>
-        <Nav><LoginButton/></Nav>
+        <LoginButton/>
 <Animation mode={'wait'} initial={'false'}>
 <Suspense fallback={<Loading/>}>
     <div className="flex mt-20">

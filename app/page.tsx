@@ -1,5 +1,5 @@
 import "server-only"
-import { Header } from '@/components/section'
+import Section, { Header } from '@/components/section'
 import Image from 'next/image'
 import { Animation } from '@/utils/animation/animation'
 import Nav from '@/components/nav'
@@ -15,11 +15,11 @@ export const metadata = {
 export default function Home() {
   return (
     <> 
-    <Nav><LoginButton/></Nav>
-      <Animation mode={'wait'} initial>
+    <LoginButton/>
+      <Animation mode={'wait'} initial={false}>
         <Suspense fallback={<Loading/>}>
           <Header>
-            <div className="flex flex-col items-center mx-auto pb-12 mt-20">
+            <div className="flex flex-col items-center mx-auto pb-12 mt-20 min-h-screen">
               <div className="flex place-items-center w-96">
                 <Image
                   className="relative"
