@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { useState, useRef } from "react";
 import {ArtistDetailsCard} from "../../components/details-card";
 import { animationList, dropIn, animationItem } from "@/utils/animation/animation";
-import { useOnClickOutside } from "../click-handler";
+import { useOnClickOutside } from "../../components/click-handler";
 
 export function ArtistList({data}){
   return(

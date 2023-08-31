@@ -17,7 +17,7 @@ export default function Signup() {
         <LoginButton/>
 <Animation mode={'wait'} initial={'false'}>
 <Suspense fallback={<Loading/>}>
-    <div className="flex mt-20">
+    <div className="flex mt-20 min-h-screen">
         <div className="mx-auto relative">
             <p className="py-5 text-black dark:text-white max-w-xs">
                 Sign up to learn more about us!

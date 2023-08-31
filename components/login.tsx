@@ -22,7 +22,7 @@ export default function LoginButton() {
     if (auth.currentUser === null) {
       return (
               <>
-              <div className="fixed top-2 right-5 md:left-auto flex flex-col-reverse justify-end content-end items-end">
+              <div className="fixed top-2 right-5 md:left-auto flex flex-col-reverse justify-end content-end items-end bg-transparent z-50">
               <div className="flex flex-row items-center gap-2 text-sm">
               <div className="flex hover:scale-105">
       <Link href="/signup">Sign Up</Link> 
@@ -38,7 +38,7 @@ export default function LoginButton() {
     }
     else return (
       <>
-      <div className=" fixed top-5 right-5 md:left-auto flex flex-col-reverse justify-end content-end items-end">
+      <div className=" fixed top-5 right-5 md:left-auto flex flex-col-reverse justify-end content-end items-end bg-transparent">
         <div className="flex flex-row items-center">
         <Link href={'/dashboard'}>
 <div className="flex flex-row items-center">

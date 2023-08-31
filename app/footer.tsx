@@ -9,7 +9,7 @@ export default function Footer(){
     return (
     <>
         <Section>
-            <div className={`w-full sticky flex flex-col bg-transparent mx-auto justify-center py-2 z-50`}><Nav><></></Nav>
+            <div className={`w-full sticky flex flex-col bg-transparent mx-auto justify-center py-2 z-50 bottom-0`}><Nav><></></Nav>
                 <div className="justify-center mx-auto py-3">
                     <ThemeToggle mobile={false}/>
                 </div>

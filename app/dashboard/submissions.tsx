@@ -6,7 +6,7 @@ import {getDocuments} from "@/utils/Google/firebase/firestore/getData";
 import { getAuth } from "firebase/auth";
 import firebase_app from "@/utils/Google/firebase/config";
 import { use } from "react";
-import { useOnClickOutside } from "../click-handler";
+import { useOnClickOutside } from "../../components/click-handler";
 import { animationList, dropIn, animationItem } from "@/utils/animation/animation";
 
 const auth = getAuth(firebase_app);

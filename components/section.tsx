@@ -1,6 +1,6 @@
 'use client';
 import { useInView } from "framer-motion";
-import { useRef } from "react";
+import { useState, useRef } from "react";
 import { motion } from "framer-motion";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowDown } from "@fortawesome/free-solid-svg-icons";
@@ -74,7 +74,7 @@ export function Header({children}){
   const headerRef = useRef(null);
   const isInView = useInView(headerRef, { once: false });
   return (
-<motion.section layout className="overscroll-auto sticky-top-0 py-10" ref={headerRef}>
+<motion.section layout className="overscroll-auto sticky-top-0" ref={headerRef}>
         <motion.div
         layout
         initial={false}
@@ -89,21 +89,26 @@ export function Header({children}){
   )
 }
 
-export function SectionSwap({ children }) {
+export function SectionSwap({children}) {
   const sectionSwapRef = useRef(null);
   const isInView = useInView(sectionSwapRef, { once: false });
+  const [scene, setScene] = useState(false);
   return (
-    <motion.section layout className="overscroll-auto sticky-top-0 w-full h-full" ref={sectionSwapRef}>
-      <motion.div
+    <motion.section layout className="flex overscroll-auto sticky-top-0 w-full h-full" ref={sectionSwapRef}>
+      <motion.button
+      className="flex w-full min-h-screen"
       layout
       initial={false}
-        style={{
+      style={{
           opacity: isInView ? 1 : 0,
           transition: "all 0.2s cubic-bezier(0.17, 0.55, 0.55, 1) 0.3s"
         }}
-      >
+        onClick={() => setScene(!scene)}
+      ><>
+        {scene ? <div className="absolute w-full bg-[#00a30c] h-full"><></></div> : <div className="absolute w-full bg-[#032595] h-full"><></></div>}
         {children}
-      </motion.div>
+      </>
+      </motion.button>
     </motion.section>
   );
 }
