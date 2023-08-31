@@ -9,6 +9,8 @@ import { faFontAwesome } from '@fortawesome/free-brands-svg-icons'
 import { fas } from '@fortawesome/free-solid-svg-icons'
 import '@fortawesome/fontawesome-svg-core/styles.css'
 import { AuthContextProvider } from '../utils/context/AuthContext'
+import { Rubik } from 'next/font/google'
+
 config.autoAddCss = false
 library.add(fas, faFontAwesome)
 
@@ -18,6 +20,11 @@ export const metadata: Metadata = {
     template: '%s | SayHeySounds',
   },
 }
+ 
+const rubik = Rubik({
+  weight: '400',
+  subsets: ['latin'],
+})
 
 export default function RootLayout({
   children,
@@ -29,7 +36,7 @@ export default function RootLayout({
         <body className="relative mx-auto overscroll-auto no-scrollbar text-black dark:text-white ">
           <GABody/>
           <AuthContextProvider>    
-            <main className="relative mx-auto min-h-screen">
+            <main className={`relative mx-auto min-h-screen ${rubik.className}`}>
               {children}
             </main>
           </AuthContextProvider>
