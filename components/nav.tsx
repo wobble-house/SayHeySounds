@@ -59,31 +59,31 @@ export default function Nav({children}) {
               <ul  className="text-center flex flex-col md:flex-row gap-5">
                 <li 
                 className="font-bold text-lg">
-                  <Link href="/" onClick={() => setNavbar(false)} prefetch={false}>
+                  <Link href="/" onClick={() => setNavbar(false)}>
                   Home
                   </Link>
                 </li>
                 <li 
                 className="font-bold text-lg">
-                  <Link href="/about" onClick={() => setNavbar(false)} prefetch={false}>
+                  <Link href="/about" onClick={() => setNavbar(false)}>
                   About
                   </Link>
                 </li>
                 <li 
                 className="font-bold text-lg">
-                  <Link href="/artists" onClick={() => setNavbar(false)} prefetch={false}>
+                  <Link href="/artists" onClick={() => setNavbar(false)}>
                   Our Roster
                   </Link>
                 </li>
                 <li 
                 className="font-bold text-lg">
-                  <Link href="/sync" onClick={() => setNavbar(false)} prefetch={false}>
+                  <Link href="/sync" onClick={() => setNavbar(false)}>
                   Sync Placements
                   </Link>
                 </li>
                 <li 
                 className="font-bold text-lg">
-                  <Link href="/submissions" onClick={() => setNavbar(false)} prefetch={false}>
+                  <Link href="/submissions" onClick={() => setNavbar(false)}>
                   Artist Submissions
                   </Link>
                 </li>
