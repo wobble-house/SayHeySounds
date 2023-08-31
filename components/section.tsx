@@ -105,7 +105,7 @@ export function SectionSwap({children}) {
         }}
         onClick={() => setScene(!scene)}
       ><>
-        {scene ? <div className="absolute w-full bg-[#00a30c] h-full"><></></div> : <div className="absolute w-full bg-[#032595] h-full"><></></div>}
+        {scene ? <div className="absolute w-full bg-[#a6d7aa] dark:bg-[#4e6950] h-full"><></></div> : <div className="absolute w-full bg-[#687fcc] dark:bg-[#37446e] h-full"><></></div>}
         {children}
       </>
       </motion.button>

@@ -19,7 +19,7 @@ export default function Home() {
       <Animation mode={'wait'} initial={false}>
         <Suspense fallback={<Loading/>}>
           <SectionSwap> 
-            <div className="flex flex-col items-center mx-auto mt-20 min-h-screen bg-[#00a30c] h-full">
+            <div className="flex flex-col items-center mx-auto mt-20 min-h-screen h-full">
               <div className="flex place-items-center w-96">
                 <Image
                   className="relative"
