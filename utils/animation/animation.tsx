@@ -52,6 +52,7 @@ export const dropIn = {
       scale:0
   },
 };
+
 export const animationItem = {
 visible: { 
   opacity: 1,
@@ -73,3 +74,81 @@ exit: {
   opacity: 0,
 },
 }
+
+export const swapList = {
+  visible: { 
+    transition: {
+      when: "beforeChildren",
+      staggerChildren: 0.2,
+    },
+  },
+  hidden: { 
+    transition: {
+      when: "afterChildren",
+    },
+  },
+}
+
+export const swapDropIn = {
+  hidden: {
+    x: -1000,
+      transition: {
+        duration: 3,
+        type: "spring",
+        damping: 40,
+      },
+  },
+  visible: {
+    x: 0,
+      transition: {
+          duration: 3,
+          type: "spring",
+          damping: 40,
+      }
+  },
+  exit: {
+      opacity: 0,
+      x: 1000,
+  },
+};
+
+export const swapDropOut = {
+  hidden: {
+    x: 0,
+      transition: {
+        duration: 3,
+        type: "spring",
+        damping: 40,
+      },
+  },
+  visible: {
+    x: -1000,
+      transition: {
+          duration: 3,
+          type: "spring",
+          damping: 40,
+      }
+  },
+  exit: {
+      opacity: 0,
+      x: 0,
+  },
+};
+
+export const swapItem = {
+  visible: { 
+    scale: 1,
+    transition: {
+      when: "beforeChildren",
+    },
+  },
+  hidden: { 
+    scale: 0,
+    transition: {
+      when: "afterChildren",
+    },
+  },
+  exit: {
+    opacity: 0,
+  },
+  }

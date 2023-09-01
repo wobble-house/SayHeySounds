@@ -1,7 +1,6 @@
 import "server-only"
 import { Header } from "@/components/section"
 import { Animation } from "@/utils/animation/animation"
-import Nav from "@/components/nav"
 import LoginButton from "@/components/login"
 import { Suspense } from "react"
 import Loading from "../loading"

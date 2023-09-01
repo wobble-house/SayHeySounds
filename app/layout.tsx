@@ -36,7 +36,7 @@ export default function RootLayout({
         <body className="relative mx-auto overscroll-auto no-scrollbar text-black dark:text-white ">
           <GABody/>
           <AuthContextProvider>    
-            <main className={`relative mx-auto min-h-screen ${rubik.className}`}>
+            <main className={`relative mx-auto min-h-screen ${rubik.className} w-full`}>
               {children}
             </main>
           </AuthContextProvider>

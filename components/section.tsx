@@ -4,6 +4,9 @@ import { useState, useRef } from "react";
 import { motion } from "framer-motion";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowDown } from "@fortawesome/free-solid-svg-icons";
+import { animationItem, dropIn, swapItem, swapDropIn, swapDropOut } from "@/utils/animation/animation";
+import { useOnClickOutside } from "./click-handler";
+import { AnimatePresence } from "framer-motion";
 
 export default function Section({ children }) {
     const sectionRef = useRef(null);
@@ -90,25 +93,48 @@ export function Header({children}){
 }
 
 export function SectionSwap({children}) {
+  const ref = useRef();
+  const [isModalOpen, setModalOpen] = useState(false)
+  const close = () => setModalOpen(false);
+  const open = () => setModalOpen(true);
+  useOnClickOutside(ref, () => setModalOpen(false));
   const sectionSwapRef = useRef(null);
   const isInView = useInView(sectionSwapRef, { once: false });
-  const [scene, setScene] = useState(false);
-  return (
-    <motion.section layout className="flex overscroll-auto sticky-top-0 w-full h-full" ref={sectionSwapRef}>
-      <motion.button
-      className="flex w-full min-h-screen"
-      layout
-      initial={false}
-      style={{
-          opacity: isInView ? 1 : 0,
-          transition: "all 0.2s cubic-bezier(0.17, 0.55, 0.55, 1) 0.3s"
-        }}
-        onClick={() => setScene(!scene)}
-      ><>
-        {scene ? <div className="absolute w-full bg-[#a6d7aa] dark:bg-[#4e6950] h-full"><></></div> : <div className="absolute w-full bg-[#687fcc] dark:bg-[#37446e] h-full"><></></div>}
-        {children}
-      </>
-      </motion.button>
-    </motion.section>
+  if (isModalOpen) return (
+    <AnimatePresence>
+    <motion.section layout className={`flex overscroll-auto h-full bg-[#687fcc] dark:bg-[#37446e] ${!isModalOpen ? "w-full" : "w-32"}`} ref={sectionSwapRef}>
+
+      <div className={`flex justify-center items-center ${isModalOpen ? "w-full" : "w-32"} overscroll-none`}>
+      <motion.button 
+                initial="hidden"
+                animate="visible"
+                exit="exit"
+                variants={swapDropOut}
+                layout
+                onClick={!isModalOpen ? open : close }>
+                <div className="flex w-full" ref={ref}>
+                  {children}
+                    </div>
+                </motion.button>
+                </div>
+                </motion.section>
+                </AnimatePresence>
+                )
+else return (
+  <AnimatePresence initial={false}>
+  <motion.section layout className="flex justify-center overscroll-auto w-full mx-auto bg-[#a6d7aa] dark:bg-[#4e6950]" ref={sectionSwapRef}>
+                <motion.button 
+                initial="hidden"
+                animate="visible"
+                exit="exit"
+                variants={swapDropIn}
+                layout
+                onClick={!isModalOpen ? open : close }>
+                <div className="flex  w-full mx-auto" ref={ref}>
+                  {children}
+                </div>
+              </motion.button>
+</motion.section>
+</AnimatePresence>
   );
 }

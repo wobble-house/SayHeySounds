@@ -19,7 +19,7 @@ export default function Home() {
       <Animation mode={'wait'} initial={false}>
         <Suspense fallback={<Loading/>}>
           <SectionSwap> 
-            <div className="flex flex-col items-center mx-auto mt-20 min-h-screen h-full">
+            <div className="flex flex-col items-center mx-auto mt-20 min-h-screen h-full w-full">
               <div className="flex place-items-center w-96">
                 <Image
                   className="relative"
@@ -32,6 +32,18 @@ export default function Home() {
               </div>
             </div>
             </SectionSwap>
+            <div className="fixed flex-col items-center mx-auto mt-20 min-h-screen h-full w-full z-50">
+              <div className="flex place-items-center w-96">
+                <Image
+                  className="relative"
+                  src="/logos/sayheysoundslogo.webp"
+                  alt="SayHeySounds Logo"
+                  width={1330}
+                  height={1330}
+                  priority
+                />
+              </div>
+            </div>
         </Suspense>
       </Animation>
     </>
