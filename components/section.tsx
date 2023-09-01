@@ -102,9 +102,9 @@ export function SectionSwap({children}) {
   const isInView = useInView(sectionSwapRef, { once: false });
   if (isModalOpen) return (
     <AnimatePresence>
-    <motion.section layout className={`flex overscroll-auto h-full bg-[#687fcc] dark:bg-[#37446e] ${!isModalOpen ? "w-full" : "w-32"}`} ref={sectionSwapRef}>
+    <motion.section layout className={`flex overscroll-auto h-full`} ref={sectionSwapRef}>
 
-      <div className={`flex justify-center items-center ${isModalOpen ? "w-full" : "w-32"} overscroll-none`}>
+      <div className={`flex justify-center items-center ${isModalOpen ? "w-full" : "max-w-4xl"} overscroll-none`}>
       <motion.button 
                 initial="hidden"
                 animate="visible"
@@ -122,7 +122,7 @@ export function SectionSwap({children}) {
                 )
 else return (
   <AnimatePresence initial={false}>
-  <motion.section layout className="flex justify-center overscroll-auto w-full mx-auto bg-[#a6d7aa] dark:bg-[#4e6950]" ref={sectionSwapRef}>
+  <motion.section layout className="flex justify-center overscroll-auto mx-auto bg-transparent" ref={sectionSwapRef}>
                 <motion.button 
                 initial="hidden"
                 animate="visible"
@@ -130,9 +130,8 @@ else return (
                 variants={swapDropIn}
                 layout
                 onClick={!isModalOpen ? open : close }>
-                <div className="flex  w-full mx-auto" ref={ref}>
-                  {children}
-                </div>
+                  <div className="min-h-screen">
+                <h2>button</h2></div>
               </motion.button>
 </motion.section>
 </AnimatePresence>

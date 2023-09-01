@@ -91,7 +91,7 @@ export const swapList = {
 
 export const swapDropIn = {
   hidden: {
-    x: -1000,
+    x: 1000,
       transition: {
         duration: 3,
         type: "spring",
@@ -108,13 +108,13 @@ export const swapDropIn = {
   },
   exit: {
       opacity: 0,
-      x: 1000,
+      x: -1000,
   },
 };
 
 export const swapDropOut = {
   hidden: {
-    x: 0,
+    x: -1000,
       transition: {
         duration: 3,
         type: "spring",
@@ -122,7 +122,7 @@ export const swapDropOut = {
       },
   },
   visible: {
-    x: -1000,
+    x: 600,
       transition: {
           duration: 3,
           type: "spring",
@@ -130,20 +130,17 @@ export const swapDropOut = {
       }
   },
   exit: {
-      opacity: 0,
-      x: 0,
+      x: -1000,
   },
 };
 
 export const swapItem = {
   visible: { 
-    scale: 1,
     transition: {
       when: "beforeChildren",
     },
   },
   hidden: { 
-    scale: 0,
     transition: {
       when: "afterChildren",
     },

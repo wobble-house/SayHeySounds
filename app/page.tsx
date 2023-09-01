@@ -18,8 +18,22 @@ export default function Home() {
     <LoginButton/>
       <Animation mode={'wait'} initial={false}>
         <Suspense fallback={<Loading/>}>
+          <div className="relative top=0 mx-auto">
+        <div className="fixed flex-col items-center align-center justify-center mx-auto mt-20 min-h-screen h-full w-full z-50">
+              <div className="relative w-96 mx-auto">
+                <Image
+                className="relative"
+                  src="/logos/sayheysoundslogo.webp"
+                  alt="SayHeySounds Logo"
+                  width={1330}
+                  height={1330}
+                  priority
+                />
+              </div>
+            </div>
+            </div>
           <SectionSwap> 
-            <div className="flex flex-col items-center mx-auto mt-20 min-h-screen h-full w-full">
+            <div className="relative flex-col items-center mt-20 left-0 min-h-screen h-full w-full bg-[#687fcc] dark:bg-[#37446e]">
               <div className="flex place-items-center w-96">
                 <Image
                   className="relative"
@@ -32,18 +46,7 @@ export default function Home() {
               </div>
             </div>
             </SectionSwap>
-            <div className="fixed flex-col items-center mx-auto mt-20 min-h-screen h-full w-full z-50">
-              <div className="flex place-items-center w-96">
-                <Image
-                  className="relative"
-                  src="/logos/sayheysoundslogo.webp"
-                  alt="SayHeySounds Logo"
-                  width={1330}
-                  height={1330}
-                  priority
-                />
-              </div>
-            </div>
+
         </Suspense>
       </Animation>
     </>
