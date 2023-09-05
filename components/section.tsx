@@ -167,7 +167,7 @@ export function SectionSwap2() {
                   <h2 className="font-sans text-2xl font-bold uppercase text-center">Section 1 Header Text</h2>
                     <h3 className="font-sans text-md text-center">Sub Text</h3>
                   </div>
-                  <div className="flex flex-row gap-2">
+                  <div className="flex flex-row gap-2 py-5">
                   <button className={`uppercase text-sm font-sans font-black btn  
                   ${!section3 ? "" : "bg-[#b8ceba] dark:bg-[#718473]"} 
                   ${!section2 ? "" : "bg-[#a4aed0] dark:bg-[#53596e]"}
@@ -237,7 +237,7 @@ export function SectionSwap2() {
                   <h2 className="font-sans text-2xl font-bold uppercase text-center">Section 2 Header Text</h2>
                     <h3 className="font-sans text-md text-center">Sub Text</h3>
                   </div>
-                  <div className="flex flex-row gap-2">
+                  <div className="flex flex-row gap-2 py-5">
                   <button className={`uppercase text-sm font-sans font-black btn  
                   ${!section2 ? "" : "bg-[#b8ceba] dark:bg-[#718473]"} 
                   ${!section1 ? "" : "bg-[#a4aed0] dark:bg-[#53596e]"}
@@ -307,7 +307,7 @@ export function SectionSwap2() {
                   <h2 className="font-sans text-2xl font-bold uppercase text-center">Section 3 Header Text</h2>
                     <h3 className="font-sans text-md text-center">Sub Text</h3>
                   </div>
-                  <div className="flex flex-row gap-2">
+                  <div className="flex flex-row gap-2 py-5">
                   <button className={`uppercase text-sm font-sans font-black btn  
                   ${!section1 ? "" : "bg-[#b8ceba] dark:bg-[#718473]"} 
                   ${!section3 ? "" : "bg-[#a4aed0] dark:bg-[#53596e]"}
