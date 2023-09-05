@@ -7,6 +7,7 @@ import { faArrowDown } from "@fortawesome/free-solid-svg-icons";
 import { animationItem, dropIn, swapItem, swapDropIn, swapDropOut } from "@/utils/animation/animation";
 import { useOnClickOutside } from "./click-handler";
 import { AnimatePresence } from "framer-motion";
+import Image from "next/image";
 
 export default function Section({ children }) {
     const sectionRef = useRef(null);
@@ -136,5 +137,138 @@ else return (
               </motion.button>
 </motion.section>
 </AnimatePresence>
+  );
+}
+
+export function SectionSwap2() {
+  const [section1, setSection1] = useState(false);
+  const [section2, setSection2] = useState(false);
+  const [section3, setSection3] = useState(false);
+  return (
+<><Section><div className={`flex mx-auto flex-col items-center min-h-screen h-full w-full justify-center  ${!section1 ? "bg-[#a6d7aa] dark:bg-[#4e6950]" : "bg-[#687fcc] dark:bg-[#37446e]"}`}>
+              <div className="flex flex-row mx-auto">
+                <div className="flex place-items-center w-96 rounded-r-full dark:rounded-l-full dark:rounded-r-none overflow-hidden shadow-xl">
+                  <Image
+                    className="relative"
+                    src="/images/studio.jpg"
+                    alt="SayHeySounds Studio"
+                    width={1330}
+                    height={1330}
+                    priority
+                  />
+                </div>
+                <div className="flex flex-col gap-5 justify-center mx-auto content-center w-96">
+                  <div className="flex flex-col">
+                    <h2 className="text-2xl font-bold uppercase text-center">Header Text</h2>
+                    <h3 className="text-lg font-normal text-center">Sub Text</h3>
+                  </div>
+                  <button className="bg-transparent rounded-3xl border-solid border-2 shadow-xl border-black dark:border-white px-4 py-2 mx-auto"
+                  onClick={() => setSection1(!section1)}>click me</button>
+                </div>
+                <div className="flex place-items-center w-96">
+                  <Image
+                    className="relative"
+                    src="/logos/sayheysoundslogo.webp"
+                    alt="SayHeySounds Studio"
+                    width={1330}
+                    height={1330}
+                    priority
+                  />
+                </div>
+              </div>
+            </div>
+            </Section>
+            <Section> 
+            <div className={`flex mx-auto flex-col items-center min-h-screen h-full w-full justify-center ${!section2 ? "bg-[#687fcc] dark:bg-[#37446e]" : "dark:bg-[#34001a] bg-[#a70054]"}`}>
+              <div className="flex flex-row mx-auto">
+                  <div className="flex place-items-center w-96 rounded-r-full dark:rounded-l-full dark:rounded-r-none overflow-hidden shadow-xl">
+                    <Image
+                      className="relative"
+                      src="/images/studio.jpg"
+                      alt="SayHeySounds Studio"
+                      width={1330}
+                      height={1330}
+                      priority
+                    />
+                  </div>
+                  <div className="flex flex-col gap-5 justify-center mx-auto content-center w-96">
+                    <div className="flex flex-col">
+                        <h2 className="text-2xl font-bold uppercase text-center">Header Text</h2>
+                        <h3 className="text-lg font-normal text-center">Sub Text</h3>
+                    </div>
+                    <button className="bg-transparent rounded-3xl border-solid border-2 shadow-xl border-black dark:border-white px-4 py-2 mx-auto"
+                    onClick={()=> setSection2(!section2)}>click me</button>
+                  </div>
+                  <div className="flex place-items-center w-96">
+                    <Image
+                      className="relative"
+                      src="/logos/sayheysoundslogo.webp"
+                      alt="SayHeySounds Studio"
+                      width={1330}
+                      height={1330}
+                      priority
+                    />
+                  </div>
+                </div>
+              </div>
+              </Section>
+              <Section> 
+              <div className={`flex mx-auto flex-col items-center min-h-screen h-full w-full justify-center 
+              ${!section3 ? "" : "bg-[#a6d7aa] dark:bg-[#4e6950]"} 
+              ${!section2 ? "" : "bg-[#687fcc] dark:bg-[#37446e]"}
+              ${!section1 ? "" : "dark:bg-[#34001a] bg-[#a70054]"}`}>
+                <div className="flex flex-row mx-auto">
+                  <div className="flex place-items-center w-96 rounded-r-full dark:rounded-l-full dark:rounded-r-none overflow-hidden shadow-xl">
+                    <Image
+                      className="relative"
+                      src="/images/studio.jpg"
+                      alt="SayHeySounds Studio"
+                      width={1330}
+                      height={1330}
+                      priority
+                    />
+                  </div>
+                <div className="flex flex-col gap-5 justify-center mx-auto content-center w-96">
+                  <div className="flex flex-col">
+                      <h2 className="text-2xl font-bold uppercase text-center">Header Text</h2>
+                      <h3 className="text-lg font-normal text-center">Sub Text</h3>
+                  </div>
+                  <div className="flex flex-row">
+                  <button className="bg-transparent rounded-3xl border-solid border-2 shadow-xl border-black dark:border-white px-4 py-2 mx-auto"
+                  onClick={()=> {
+                    setSection1(!section1)
+                    setSection2(null)
+                    setSection3(null)
+                  }
+      }>Red</button>
+                  <button className="bg-transparent rounded-3xl border-solid border-2 shadow-xl border-black dark:border-white px-4 py-2 mx-auto"
+                                    onClick={()=> {
+                                      setSection1(null)
+                                      setSection2(!section2)
+                                      setSection3(null)
+                                    }}>Blue</button>
+                  <button className="bg-transparent rounded-3xl border-solid border-2 shadow-xl border-black dark:border-white px-4 py-2 mx-auto"
+                                    onClick={()=> {
+                                      setSection1(null)
+                                      setSection2(null)
+                                      setSection3(!section3)
+                                    }}>Green</button>
+                </div>
+               
+                </div>
+                <div className="flex place-items-center w-96">
+                    <Image
+                      className="relative"
+                      src="/logos/sayheysoundslogo.webp"
+                      alt="SayHeySounds Studio"
+                      width={1330}
+                      height={1330}
+                      priority
+                    />
+                  </div>
+                </div>
+              </div>
+              </Section>
+              </>
   );
 }
