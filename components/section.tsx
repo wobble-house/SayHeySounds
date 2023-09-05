@@ -236,7 +236,7 @@ export function SectionSwap2() {
                   <div className="flex flex-row">
                   <button className="bg-transparent rounded-3xl border-solid border-2 shadow-xl border-black dark:border-white px-4 py-2 mx-auto"
                   onClick={()=> {
-                    setSection1(!section1)
+                    setSection1(true)
                     setSection2(null)
                     setSection3(null)
                   }
@@ -244,14 +244,14 @@ export function SectionSwap2() {
                   <button className="bg-transparent rounded-3xl border-solid border-2 shadow-xl border-black dark:border-white px-4 py-2 mx-auto"
                                     onClick={()=> {
                                       setSection1(null)
-                                      setSection2(!section2)
+                                      setSection2(true)
                                       setSection3(null)
                                     }}>Blue</button>
                   <button className="bg-transparent rounded-3xl border-solid border-2 shadow-xl border-black dark:border-white px-4 py-2 mx-auto"
                                     onClick={()=> {
                                       setSection1(null)
                                       setSection2(null)
-                                      setSection3(!section3)
+                                      setSection3(true)
                                     }}>Green</button>
                 </div>
                
