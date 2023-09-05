@@ -49,7 +49,7 @@ export default function Footer(){
                         <FontAwesomeIcon icon={faFacebook} size="2x" className="hover:scale-[1.05]"/>
                     </Link>
                 </div>
-                <p className="text-center">© 2023 by SayHeySounds</p>
+                <p className="text-center font-mono text-xs">© 2023 by SayHeySounds</p>
             </div>
         </Section>
         </Animation>

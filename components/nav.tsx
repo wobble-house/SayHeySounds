@@ -58,33 +58,28 @@ export default function Nav({children}) {
           </div>
             <div ref={Navref} className={`flex h-full z-20 md:mx-auto content-center items-center bg-white dark:bg-black md:bg-transparent dark:md:bg-transparent justify-center md:block ${navbar ? 'sticky' : 'hidden'}`}>
               <ul  className="text-center flex flex-col md:flex-row gap-5">
-                <li 
-                className="text-lg">
-                  <Link href="/" onClick={() => setNavbar(false)}>
+                <li>
+                  <Link href="/" onClick={() => setNavbar(false)} className="font-sans uppercase text-xs">
                   Home
                   </Link>
                 </li>
-                <li 
-                className="text-lg">
-                  <Link href="/about" onClick={() => setNavbar(false)}>
+                <li>
+                  <Link href="/about" onClick={() => setNavbar(false)} className="font-sans uppercase text-xs">
                   About
                   </Link>
                 </li>
-                <li 
-                className="text-lg">
-                  <Link href="/artists" onClick={() => setNavbar(false)}>
+                <li>
+                  <Link href="/artists" onClick={() => setNavbar(false)} className="font-sans uppercase text-xs">
                   Our Roster
                   </Link>
                 </li>
-                <li 
-                className="text-lg">
-                  <Link href="/sync" onClick={() => setNavbar(false)}>
+                <li>
+                  <Link href="/sync" onClick={() => setNavbar(false)} className="font-sans uppercase text-xs">
                   Sync Placements
                   </Link>
                 </li>
-                <li 
-                className="text-lg">
-                  <Link href="/submissions" onClick={() => setNavbar(false)}>
+                <li>
+                  <Link href="/submissions" onClick={() => setNavbar(false)} className="font-sans uppercase text-xs">
                   Artist Submissions
                   </Link>
                 </li>

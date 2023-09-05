@@ -145,74 +145,8 @@ export function SectionSwap2() {
   const [section2, setSection2] = useState(false);
   const [section3, setSection3] = useState(true);
   return (
-<><Section><div className={`flex transition ease-in-out delay-150 mx-auto flex-col items-center min-h-screen h-full w-full justify-center  ${!section1 ? "bg-[#a6d7aa] dark:bg-[#4e6950]" : "bg-[#687fcc] dark:bg-[#37446e]"}`}>
-              <div className={`flex ${!section1 ? "flex-col md:flex-row": "flex-col md:flex-row-reverse"} mx-auto`}>
-                <div className="flex place-items-center w-96 rounded-r-full dark:rounded-l-full dark:rounded-r-none overflow-hidden shadow-2xl">
-                  <Image
-                    className="relative"
-                    src="/images/studio.jpg"
-                    alt="SayHeySounds Studio"
-                    width={1330}
-                    height={1330}
-                    priority
-                  />
-                </div>
-                <div className="flex flex-col gap-5 justify-center mx-auto content-center w-96">
-                  <div className="flex flex-col">
-                    <h2 className="font-sans text-2xl font-bold uppercase text-center">Header Text</h2>
-                    <h3 className="font-sans text-md text-center">Sub Text</h3>
-                  </div>
-                  <button className={`font-sans uppercase font-black text-sm btn transition ease-in-out delay-150 ${!section1 ? "bg-[#b8ceba] dark:bg-[#718473]" : "bg-[#a4aed0] dark:bg-[#53596e]"} rounded-3xl shadow-xl px-4 mx-auto hover:animate-wiggle hover:scale-[1.03]`}
-                  onClick={() => setSection1(!section1)}>Click Me</button>
-                </div>
-                <div className="flex place-items-center w-96">
-                  <Image
-                    className="relative"
-                    src="/logos/sayheysoundslogo.webp"
-                    alt="SayHeySounds Studio"
-                    width={1330}
-                    height={1330}
-                    priority
-                  />
-                </div>
-              </div>
-            </div>
-            </Section>
-            <Section> 
-            <div className={`flex transition ease-in-out delay-150 mx-auto flex-col items-center min-h-screen h-full w-full justify-center ${!section2 ? "bg-[#687fcc] dark:bg-[#37446e]" : "dark:bg-[#34001a] bg-[#a70054]"}`}>
-            <div className={`flex ${!section2 ? "flex-col md:flex-row": "flex-col md:flex-row-reverse"} mx-auto`}>
-                  <div className="flex place-items-center w-96 rounded-r-full dark:rounded-l-full dark:rounded-r-none overflow-hidden shadow-xl">
-                    <Image
-                      className="relative"
-                      src="/images/studio.jpg"
-                      alt="SayHeySounds Studio"
-                      width={1330}
-                      height={1330}
-                      priority
-                    />
-                  </div>
-                  <div className="flex flex-col gap-5 justify-center mx-auto content-center w-96">
-                    <div className="flex flex-col">
-                    <h2 className="font-sans text-2xl font-bold uppercase text-center">Header Text</h2>
-                    <h3 className="font-sans text-md text-center">Sub Text</h3>
-                    </div>
-                    <button className={`uppercase font-sans font-black text-sm  btn transition ease-in-out delay-150 ${!section2 ? "bg-[#a4aed0] dark:bg-[#53596e]" : "bg-[#a96a89] dark:bg-[#71465b]"} rounded-3xl shadow-xl px-4 mx-auto hover:animate-wiggle hover:scale-[1.03]`}
-                    onClick={()=> setSection2(!section2)}>click me</button>
-                  </div>
-                  <div className="flex place-items-center w-96">
-                    <Image
-                      className="relative"
-                      src="/logos/sayheysoundslogo.webp"
-                      alt="SayHeySounds Studio"
-                      width={1330}
-                      height={1330}
-                      priority
-                    />
-                  </div>
-                </div>
-              </div>
-              </Section>
-              <Section> 
+<>
+<Section> 
               <div className={`flex mx-auto transition ease-in-out delay-150 flex-col items-center min-h-screen h-full w-full justify-center 
               ${!section3 ? "" : "bg-[#a6d7aa] dark:bg-[#4e6950]"} 
               ${!section2 ? "" : "bg-[#687fcc] dark:bg-[#37446e]"}
@@ -230,7 +164,7 @@ export function SectionSwap2() {
                   </div>
                 <div className="flex flex-col gap-5 justify-center mx-auto content-center w-96">
                   <div className="flex flex-col">
-                  <h2 className="font-sans text-2xl font-bold uppercase text-center">Header Text</h2>
+                  <h2 className="font-sans text-2xl font-bold uppercase text-center">Section 1 Header Text</h2>
                     <h3 className="font-sans text-md text-center">Sub Text</h3>
                   </div>
                   <div className="flex flex-col md:flex-row">
@@ -261,6 +195,146 @@ export function SectionSwap2() {
                   ${!section3 ? "" : "bg-[#b8ceba] dark:bg-[#718473]"} 
                   ${!section2 ? "" : "bg-[#a4aed0] dark:bg-[#53596e]"}
                   ${!section1 ? "" : "bg-[#a96a89] dark:bg-[#71465b]"} transition ease-in-out delay-15 rounded-3xl shadow-xl px-4 mx-auto hover:animate-wiggle hover:scale-[1.03] hover:bg-[#b8ceba] dark:hover:bg-[#718473]`}
+                                    onClick={()=> {
+                                      setSection1(null)
+                                      setSection2(null)
+                                      setSection3(true)
+                                    }}>Green</button>
+                </div>
+               
+                </div>
+                <div className="flex place-items-center w-96">
+                    <Image
+                      className="relative"
+                      src="/logos/sayheysoundslogo.webp"
+                      alt="SayHeySounds Studio"
+                      width={1330}
+                      height={1330}
+                      priority
+                    />
+                  </div>
+                </div>
+              </div>
+              </Section>
+              <Section> 
+              <div className={`flex mx-auto transition ease-in-out delay-150 flex-col items-center min-h-screen h-full w-full justify-center 
+              ${!section2 ? "" : "bg-[#a6d7aa] dark:bg-[#4e6950]"} 
+              ${!section1 ? "" : "bg-[#687fcc] dark:bg-[#37446e]"}
+              ${!section3 ? "" : "dark:bg-[#34001a] bg-[#a70054]"}`}>
+                <div className={`flex ${!section3 ? "flex-col md:flex-row": "flex-col md:flex-row-reverse"} mx-auto`}>
+                  <div className="flex place-items-center w-96 rounded-r-full dark:rounded-l-full dark:rounded-r-none overflow-hidden shadow-xl">
+                    <Image
+                      className="relative"
+                      src="/images/studio.jpg"
+                      alt="SayHeySounds Studio"
+                      width={1330}
+                      height={1330}
+                      priority
+                    />
+                  </div>
+                <div className="flex flex-col gap-5 justify-center mx-auto content-center w-96">
+                  <div className="flex flex-col">
+                  <h2 className="font-sans text-2xl font-bold uppercase text-center">Section 2 Header Text</h2>
+                    <h3 className="font-sans text-md text-center">Sub Text</h3>
+                  </div>
+                  <div className="flex flex-col md:flex-row">
+                  <button className={`uppercase text-sm font-sans font-black btn  
+                  ${!section2 ? "" : "bg-[#b8ceba] dark:bg-[#718473]"} 
+                  ${!section1 ? "" : "bg-[#a4aed0] dark:bg-[#53596e]"}
+                  ${!section3 ? "" : "bg-[#a96a89] dark:bg-[#71465b]"}
+               rounded-3xl shadow-xl px-4 mx-auto hover:animate-wiggle hover:scale-[1.03] hover:bg-[#a96a89] dark:hover:bg-[#71465b]`}
+                  onClick={()=> {
+                    setSection1(true)
+                    setSection2(null)
+                    setSection3(null)
+                  }
+      }>Red</button>
+
+                  <button className={`uppercase text-sm font-sans font-black btn 
+                  ${!section2 ? "" : "bg-[#b8ceba] dark:bg-[#718473]"} 
+                  ${!section1 ? "" : "bg-[#a4aed0] dark:bg-[#53596e]"}
+                  ${!section3 ? "" : "bg-[#a96a89] dark:bg-[#71465b]"} 
+                  transition rounded-3xl shadow-xl px-4 mx-auto hover:animate-wiggle hover:scale-[1.03] hover:bg-[#a4aed0] dark:hover:bg-[#53596e]`}
+                                    onClick={()=> {
+                                      setSection1(null)
+                                      setSection2(true)
+                                      setSection3(null)
+                                    }}>Blue</button>
+
+                  <button className={`uppercase text-sm font-sans font-black btn 
+                  ${!section2 ? "" : "bg-[#b8ceba] dark:bg-[#718473]"} 
+                  ${!section1 ? "" : "bg-[#a4aed0] dark:bg-[#53596e]"}
+                  ${!section3 ? "" : "bg-[#a96a89] dark:bg-[#71465b]"} transition ease-in-out delay-15 rounded-3xl shadow-xl px-4 mx-auto hover:animate-wiggle hover:scale-[1.03] hover:bg-[#b8ceba] dark:hover:bg-[#718473]`}
+                                    onClick={()=> {
+                                      setSection1(null)
+                                      setSection2(null)
+                                      setSection3(true)
+                                    }}>Green</button>
+                </div>
+               
+                </div>
+                <div className="flex place-items-center w-96">
+                    <Image
+                      className="relative"
+                      src="/logos/sayheysoundslogo.webp"
+                      alt="SayHeySounds Studio"
+                      width={1330}
+                      height={1330}
+                      priority
+                    />
+                  </div>
+                </div>
+              </div>
+              </Section>
+              <Section> 
+              <div className={`flex mx-auto transition ease-in-out delay-150 flex-col items-center min-h-screen h-full w-full justify-center 
+              ${!section1 ? "" : "bg-[#a6d7aa] dark:bg-[#4e6950]"} 
+              ${!section3 ? "" : "bg-[#687fcc] dark:bg-[#37446e]"}
+              ${!section2 ? "" : "dark:bg-[#34001a] bg-[#a70054]"}`}>
+                <div className={`flex ${!section3 ? "flex-col md:flex-row": "flex-col md:flex-row-reverse"} mx-auto`}>
+                  <div className="flex place-items-center w-96 rounded-r-full dark:rounded-l-full dark:rounded-r-none overflow-hidden shadow-xl">
+                    <Image
+                      className="relative"
+                      src="/images/studio.jpg"
+                      alt="SayHeySounds Studio"
+                      width={1330}
+                      height={1330}
+                      priority
+                    />
+                  </div>
+                <div className="flex flex-col gap-5 justify-center mx-auto content-center w-96">
+                  <div className="flex flex-col">
+                  <h2 className="font-sans text-2xl font-bold uppercase text-center">Section 3 Header Text</h2>
+                    <h3 className="font-sans text-md text-center">Sub Text</h3>
+                  </div>
+                  <div className="flex flex-col md:flex-row">
+                  <button className={`uppercase text-sm font-sans font-black btn  
+                  ${!section1 ? "" : "bg-[#b8ceba] dark:bg-[#718473]"} 
+                  ${!section3 ? "" : "bg-[#a4aed0] dark:bg-[#53596e]"}
+                  ${!section2 ? "" : "bg-[#a96a89] dark:bg-[#71465b]"}
+               rounded-3xl shadow-xl px-4 mx-auto hover:animate-wiggle hover:scale-[1.03] hover:bg-[#a96a89] dark:hover:bg-[#71465b]`}
+                  onClick={()=> {
+                    setSection1(true)
+                    setSection2(null)
+                    setSection3(null)
+                  }
+      }>Red</button>
+
+                  <button className={`uppercase text-sm font-sans font-black btn 
+                  ${!section1 ? "" : "bg-[#b8ceba] dark:bg-[#718473]"} 
+                  ${!section3 ? "" : "bg-[#a4aed0] dark:bg-[#53596e]"}
+                  ${!section2 ? "" : "bg-[#a96a89] dark:bg-[#71465b]"} 
+                  transition rounded-3xl shadow-xl px-4 mx-auto hover:animate-wiggle hover:scale-[1.03] hover:bg-[#a4aed0] dark:hover:bg-[#53596e]`}
+                                    onClick={()=> {
+                                      setSection1(null)
+                                      setSection2(true)
+                                      setSection3(null)
+                                    }}>Blue</button>
+
+                  <button className={`uppercase text-sm font-sans font-black btn 
+                  ${!section1 ? "" : "bg-[#b8ceba] dark:bg-[#718473]"} 
+                  ${!section3 ? "" : "bg-[#a4aed0] dark:bg-[#53596e]"}
+                  ${!section2 ? "" : "bg-[#a96a89] dark:bg-[#71465b]"} transition ease-in-out delay-15 rounded-3xl shadow-xl px-4 mx-auto hover:animate-wiggle hover:scale-[1.03] hover:bg-[#b8ceba] dark:hover:bg-[#718473]`}
                                     onClick={()=> {
                                       setSection1(null)
                                       setSection2(null)

@@ -38,10 +38,10 @@ export default function RootLayout({
 }) {
   return (
       <html lang="en">
-        <body className="relative mx-auto no-scrollbar text-black dark:text-white ">
+        <body className={`relative mx-auto no-scrollbar text-black dark:text-white ${rubik.variable} ${comfortaa.variable} `}>
           <GABody/>
           <AuthContextProvider>    
-            <main className={` mx-auto min-h-screen ${rubik.variable} ${comfortaa.variable} w-full snap-y`}>
+            <main className={` mx-auto min-h-screen w-full snap-y`}>
               {children}
             </main>
           </AuthContextProvider>
