@@ -143,11 +143,11 @@ else return (
 export function SectionSwap2() {
   const [section1, setSection1] = useState(false);
   const [section2, setSection2] = useState(false);
-  const [section3, setSection3] = useState(false);
+  const [section3, setSection3] = useState(true);
   return (
-<><Section><div className={`flex mx-auto flex-col items-center min-h-screen h-full w-full justify-center  ${!section1 ? "bg-[#a6d7aa] dark:bg-[#4e6950]" : "bg-[#687fcc] dark:bg-[#37446e]"}`}>
+<><Section><div className={`flex transition ease-in-out delay-150 mx-auto flex-col items-center min-h-screen h-full w-full justify-center  ${!section1 ? "bg-[#a6d7aa] dark:bg-[#4e6950]" : "bg-[#687fcc] dark:bg-[#37446e]"}`}>
               <div className={`flex ${!section1 ? "flex-row": "flex-row-reverse"} mx-auto`}>
-                <div className="flex place-items-center w-96 rounded-r-full dark:rounded-l-full dark:rounded-r-none overflow-hidden shadow-xl">
+                <div className="flex place-items-center w-96 rounded-r-full dark:rounded-l-full dark:rounded-r-none overflow-hidden shadow-2xl">
                   <Image
                     className="relative"
                     src="/images/studio.jpg"
@@ -162,8 +162,8 @@ export function SectionSwap2() {
                     <h2 className="text-2xl font-bold uppercase text-center">Header Text</h2>
                     <h3 className="text-lg font-normal text-center">Sub Text</h3>
                   </div>
-                  <button className="bg-transparent rounded-3xl border-solid border-2 shadow-xl border-black dark:border-white px-4 py-2 mx-auto"
-                  onClick={() => setSection1(!section1)}>click me</button>
+                  <button className={`btn transition ease-in-out delay-150 ${!section1 ? "bg-[#b8ceba] dark:bg-[#718473]" : "bg-[#a4aed0] dark:bg-[#53596e]"} rounded-3xl shadow-xl px-4 mx-auto hover:scale-[1.02]`}
+                  onClick={() => setSection1(!section1)}>Click Me</button>
                 </div>
                 <div className="flex place-items-center w-96">
                   <Image
@@ -179,7 +179,7 @@ export function SectionSwap2() {
             </div>
             </Section>
             <Section> 
-            <div className={`flex mx-auto flex-col items-center min-h-screen h-full w-full justify-center ${!section2 ? "bg-[#687fcc] dark:bg-[#37446e]" : "dark:bg-[#34001a] bg-[#a70054]"}`}>
+            <div className={`flex transition ease-in-out delay-150 mx-auto flex-col items-center min-h-screen h-full w-full justify-center ${!section2 ? "bg-[#687fcc] dark:bg-[#37446e]" : "dark:bg-[#34001a] bg-[#a70054]"}`}>
             <div className={`flex ${!section2 ? "flex-row": "flex-row-reverse"} mx-auto`}>
                   <div className="flex place-items-center w-96 rounded-r-full dark:rounded-l-full dark:rounded-r-none overflow-hidden shadow-xl">
                     <Image
@@ -196,7 +196,7 @@ export function SectionSwap2() {
                         <h2 className="text-2xl font-bold uppercase text-center">Header Text</h2>
                         <h3 className="text-lg font-normal text-center">Sub Text</h3>
                     </div>
-                    <button className="bg-transparent rounded-3xl border-solid border-2 shadow-xl border-black dark:border-white px-4 py-2 mx-auto"
+                    <button className={`btn transition ease-in-out delay-150 ${!section2 ? "bg-[#a4aed0] dark:bg-[#53596e]" : "bg-[#a96a89] dark:bg-[#71465b]"} rounded-3xl shadow-xl px-4 mx-auto`}
                     onClick={()=> setSection2(!section2)}>click me</button>
                   </div>
                   <div className="flex place-items-center w-96">
@@ -213,7 +213,7 @@ export function SectionSwap2() {
               </div>
               </Section>
               <Section> 
-              <div className={`flex mx-auto flex-col items-center min-h-screen h-full w-full justify-center 
+              <div className={`flex mx-auto transition ease-in-out delay-150 flex-col items-center min-h-screen h-full w-full justify-center 
               ${!section3 ? "" : "bg-[#a6d7aa] dark:bg-[#4e6950]"} 
               ${!section2 ? "" : "bg-[#687fcc] dark:bg-[#37446e]"}
               ${!section1 ? "" : "dark:bg-[#34001a] bg-[#a70054]"}`}>
@@ -234,20 +234,33 @@ export function SectionSwap2() {
                       <h3 className="text-lg font-normal text-center">Sub Text</h3>
                   </div>
                   <div className="flex flex-row">
-                  <button className="bg-transparent rounded-3xl border-solid border-2 shadow-xl border-black dark:border-white px-4 py-2 mx-auto"
+                  <button className={`btn  
+                  ${!section3 ? "" : "bg-[#b8ceba] dark:bg-[#718473]"} 
+                  ${!section2 ? "" : "bg-[#a4aed0] dark:bg-[#53596e]"}
+                  ${!section1 ? "" : "dark:bg-[#a96a89] bg-[#71465b]"}
+               rounded-3xl shadow-xl px-4 mx-auto`}
                   onClick={()=> {
                     setSection1(true)
                     setSection2(null)
                     setSection3(null)
                   }
       }>Red</button>
-                  <button className="bg-transparent rounded-3xl border-solid border-2 shadow-xl border-black dark:border-white px-4 py-2 mx-auto"
+
+                  <button className={` btn 
+                  ${!section3 ? "" : "bg-[#b8ceba] dark:bg-[#718473]"} 
+                  ${!section2 ? "" : "bg-[#a4aed0] dark:bg-[#53596e]"}
+                  ${!section1 ? "" : "dark:bg-[#a96a89] bg-[#71465b]"} 
+                  transition rounded-3xl shadow-xl px-4 mx-auto`}
                                     onClick={()=> {
                                       setSection1(null)
                                       setSection2(true)
                                       setSection3(null)
                                     }}>Blue</button>
-                  <button className="bg-transparent rounded-3xl border-solid border-2 shadow-xl border-black dark:border-white px-4 py-2 mx-auto"
+
+                  <button className={` btn 
+                  ${!section3 ? "" : "bg-[#b8ceba] dark:bg-[#718473]"} 
+                  ${!section2 ? "" : "bg-[#a4aed0] dark:bg-[#53596e]"}
+                  ${!section1 ? "" : "dark:bg-[#a96a89] bg-[#71465b]"} transition ease-in-out delay-15 rounded-3xl shadow-xl px-4 mx-auto`}
                                     onClick={()=> {
                                       setSection1(null)
                                       setSection2(null)
