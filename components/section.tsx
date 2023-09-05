@@ -146,7 +146,7 @@ export function SectionSwap2() {
   const [section3, setSection3] = useState(false);
   return (
 <><Section><div className={`flex mx-auto flex-col items-center min-h-screen h-full w-full justify-center  ${!section1 ? "bg-[#a6d7aa] dark:bg-[#4e6950]" : "bg-[#687fcc] dark:bg-[#37446e]"}`}>
-              <div className="flex flex-row mx-auto">
+              <div className={`flex ${!section1 ? "flex-row": "flex-row-reverse"} mx-auto`}>
                 <div className="flex place-items-center w-96 rounded-r-full dark:rounded-l-full dark:rounded-r-none overflow-hidden shadow-xl">
                   <Image
                     className="relative"
@@ -180,7 +180,7 @@ export function SectionSwap2() {
             </Section>
             <Section> 
             <div className={`flex mx-auto flex-col items-center min-h-screen h-full w-full justify-center ${!section2 ? "bg-[#687fcc] dark:bg-[#37446e]" : "dark:bg-[#34001a] bg-[#a70054]"}`}>
-              <div className="flex flex-row mx-auto">
+            <div className={`flex ${!section2 ? "flex-row": "flex-row-reverse"} mx-auto`}>
                   <div className="flex place-items-center w-96 rounded-r-full dark:rounded-l-full dark:rounded-r-none overflow-hidden shadow-xl">
                     <Image
                       className="relative"
@@ -217,7 +217,7 @@ export function SectionSwap2() {
               ${!section3 ? "" : "bg-[#a6d7aa] dark:bg-[#4e6950]"} 
               ${!section2 ? "" : "bg-[#687fcc] dark:bg-[#37446e]"}
               ${!section1 ? "" : "dark:bg-[#34001a] bg-[#a70054]"}`}>
-                <div className="flex flex-row mx-auto">
+                <div className={`flex ${!section3 ? "flex-row": "flex-row-reverse"} mx-auto`}>
                   <div className="flex place-items-center w-96 rounded-r-full dark:rounded-l-full dark:rounded-r-none overflow-hidden shadow-xl">
                     <Image
                       className="relative"
