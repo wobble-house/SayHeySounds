@@ -237,7 +237,7 @@ export function SectionSwap2() {
                   <button className={`btn  
                   ${!section3 ? "" : "bg-[#b8ceba] dark:bg-[#718473]"} 
                   ${!section2 ? "" : "bg-[#a4aed0] dark:bg-[#53596e]"}
-                  ${!section1 ? "" : "dark:bg-[#a96a89] bg-[#71465b]"}
+                  ${!section1 ? "" : "bg-[#a96a89] dark:bg-[#71465b]"}
                rounded-3xl shadow-xl px-4 mx-auto`}
                   onClick={()=> {
                     setSection1(true)
@@ -249,7 +249,7 @@ export function SectionSwap2() {
                   <button className={` btn 
                   ${!section3 ? "" : "bg-[#b8ceba] dark:bg-[#718473]"} 
                   ${!section2 ? "" : "bg-[#a4aed0] dark:bg-[#53596e]"}
-                  ${!section1 ? "" : "dark:bg-[#a96a89] bg-[#71465b]"} 
+                  ${!section1 ? "" : "bg-[#a96a89] dark:bg-[#71465b]"} 
                   transition rounded-3xl shadow-xl px-4 mx-auto`}
                                     onClick={()=> {
                                       setSection1(null)
@@ -260,7 +260,7 @@ export function SectionSwap2() {
                   <button className={` btn 
                   ${!section3 ? "" : "bg-[#b8ceba] dark:bg-[#718473]"} 
                   ${!section2 ? "" : "bg-[#a4aed0] dark:bg-[#53596e]"}
-                  ${!section1 ? "" : "dark:bg-[#a96a89] bg-[#71465b]"} transition ease-in-out delay-15 rounded-3xl shadow-xl px-4 mx-auto`}
+                  ${!section1 ? "" : "bg-[#a96a89] dark:bg-[#71465b]"} transition ease-in-out delay-15 rounded-3xl shadow-xl px-4 mx-auto`}
                                     onClick={()=> {
                                       setSection1(null)
                                       setSection2(null)
