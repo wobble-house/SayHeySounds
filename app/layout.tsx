@@ -32,11 +32,11 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-      <html lang="en" style={{scrollBehavior:'smooth'}}>
-        <body className="relative mx-auto overscroll-auto no-scrollbar text-black dark:text-white ">
+      <html lang="en">
+        <body className="relative mx-auto no-scrollbar text-black dark:text-white ">
           <GABody/>
           <AuthContextProvider>    
-            <main className={` mx-auto min-h-screen ${rubik.className} w-full`}>
+            <main className={` mx-auto min-h-screen ${rubik.className} w-full snap-y`}>
               {children}
             </main>
           </AuthContextProvider>

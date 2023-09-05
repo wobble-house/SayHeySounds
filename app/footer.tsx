@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Animation } from "@/utils/animation/animation";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {faInstagram, faSoundcloud, faYoutube, faFacebook} from "@fortawesome/free-brands-svg-icons";
 import { ThemeToggle } from "@/components/theme-switcher";
@@ -8,8 +9,9 @@ import Nav from "@/components/nav";
 export default function Footer(){
     return (
     <>
+    <Animation mode={'wait'} initial={false}>
         <Section>
-            <div className={`w-full sticky flex flex-col bg-transparent mx-auto justify-center py-2 z-50 bottom-0`}><Nav><></></Nav>
+            <div className={`w-full sticky flex flex-col bg-transparent mx-auto justify-center my-2 z-50 bottom-0`}><Nav><></></Nav>
                 <div className="justify-center mx-auto py-3">
                     <ThemeToggle mobile={false}/>
                 </div>
@@ -50,6 +52,7 @@ export default function Footer(){
                 <p className="text-center">© 2023 by SayHeySounds</p>
             </div>
         </Section>
+        </Animation>
     </>
     )
 }

@@ -12,7 +12,7 @@ export default function Section({ children }) {
     const sectionRef = useRef(null);
     const isInView = useInView(sectionRef, { once: false });
     return (
-      <motion.section layout className="overscroll-auto sticky-top-0" ref={sectionRef}>
+      <motion.section layout className="overscroll-auto sticky-top-0 snap-center" ref={sectionRef}>
         <motion.div
         layout
         initial={false}
@@ -131,7 +131,8 @@ else return (
                 layout
                 onClick={!isModalOpen ? open : close }>
                   <div className="min-h-screen">
-                <h2>button</h2></div>
+                {children}
+                </div>
               </motion.button>
 </motion.section>
 </AnimatePresence>
