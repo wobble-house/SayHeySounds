@@ -9,7 +9,7 @@ import { faFontAwesome } from '@fortawesome/free-brands-svg-icons'
 import { fas } from '@fortawesome/free-solid-svg-icons'
 import '@fortawesome/fontawesome-svg-core/styles.css'
 import { AuthContextProvider } from '../utils/context/AuthContext'
-import { Rubik } from 'next/font/google'
+import { Rubik, Comfortaa } from 'next/font/google'
 
 config.autoAddCss = false
 library.add(fas, faFontAwesome)
@@ -22,8 +22,13 @@ export const metadata: Metadata = {
 }
  
 const rubik = Rubik({
-  weight: '400',
   subsets: ['latin'],
+  variable: '--font-rubik',
+})
+
+const comfortaa = Comfortaa({
+  subsets: ['latin'],
+  variable: '--font-comfortaa',
 })
 
 export default function RootLayout({
@@ -36,7 +41,7 @@ export default function RootLayout({
         <body className="relative mx-auto no-scrollbar text-black dark:text-white ">
           <GABody/>
           <AuthContextProvider>    
-            <main className={` mx-auto min-h-screen ${rubik.className} w-full snap-y`}>
+            <main className={` mx-auto min-h-screen ${rubik.variable} ${comfortaa.variable} w-full snap-y`}>
               {children}
             </main>
           </AuthContextProvider>

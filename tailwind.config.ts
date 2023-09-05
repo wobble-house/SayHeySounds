@@ -12,7 +12,20 @@ const config: Config = {
       boxShadow: {
         '3xl': '0 35px 60px -15px rgba(0, 0, 0, 0.3)',
         '4xl': '0 45px 70px -10px rgba(0, 0, 0, 0.5)',
-      }
+      },
+      keyframes: {
+        wiggle: {
+          '0%, 100%': { transform: 'rotate(-3deg)' },
+          '50%': { transform: 'rotate(3deg)' },
+        }
+      },
+      animation: {
+        wiggle: 'wiggle 1s ease-in-out infinite',
+      },
+      fontFamily: {
+        sans: ['var(--font-comfortaa)'],
+        mono: ['var(--font-rubik)'],
+      },
     },
     colors: ({ colors }) => ({
       inherit: colors.inherit,
