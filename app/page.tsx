@@ -13,12 +13,17 @@ export const metadata = {
 }
 
 export default function Home() {
+  const color1 = "green"
+  const color2 = "red"
+  const color3 = "blue"
   return (
     <> 
     <LoginButton/>
       <Animation mode={'wait'} initial={false}>
         <Suspense fallback={<Loading/>}>
-          <SectionSwap2/> 
+          <SectionSwap2 color={color1} title={`${color1} section`} subtitle={`this section begins as ${color1}`}/> 
+          <SectionSwap2 color={color2} title={`${color2} section`} subtitle={`this section begins as ${color2}`}/> 
+          <SectionSwap2 color={color3} title={`${color3} section`} subtitle={`this section begins as ${color3}`}/> 
         </Suspense>
       </Animation>
     </>
